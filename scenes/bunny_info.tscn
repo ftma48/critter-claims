@@ -1,0 +1,185 @@
+[gd_scene load_steps=9 format=3 uid="uid://dch8cy1856q2i"]
+
+[ext_resource type="Texture2D" uid="uid://dwv82efaxuyrt" path="res://ui/Cloud Tileset.png" id="1_63ed2"]
+[ext_resource type="Script" uid="uid://dn2vic32hh546" path="res://scenes/bunny_info.gd" id="1_bijmv"]
+[ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="2_duteh"]
+[ext_resource type="Texture2D" uid="uid://bf8bv3bsjwvh1" path="res://ui/SpriteSheet.png" id="4_rhci6"]
+[ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="5_0c654"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bijmv"]
+atlas = ExtResource("2_duteh")
+region = Rect2(2, 51, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwoh3"]
+atlas = ExtResource("4_rhci6")
+region = Rect2(32, 1120, 183, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xs8dj"]
+atlas = ExtResource("5_0c654")
+region = Rect2(192, 200, 32, 16)
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bijmv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.223529, 0.729412, 1, 1)
+
+[node name="Cloud" type="Sprite2D" parent="ColorRect"]
+position = Vector2(201, 88)
+scale = Vector2(5, 5)
+texture = ExtResource("1_63ed2")
+region_enabled = true
+region_rect = Rect2(0, 48, 48, 16)
+
+[node name="Cloud2" type="Sprite2D" parent="ColorRect"]
+position = Vector2(959, 182)
+scale = Vector2(5, 5)
+texture = ExtResource("1_63ed2")
+region_enabled = true
+region_rect = Rect2(16, 32, 64, 16)
+
+[node name="Cloud3" type="Sprite2D" parent="ColorRect"]
+position = Vector2(1069, 519)
+scale = Vector2(5, 5)
+texture = ExtResource("1_63ed2")
+region_enabled = true
+region_rect = Rect2(0, 48, 48, 16)
+
+[node name="Cloud4" type="Sprite2D" parent="ColorRect"]
+position = Vector2(326, 308)
+scale = Vector2(5, 5)
+texture = ExtResource("1_63ed2")
+region_enabled = true
+region_rect = Rect2(0, 16, 48, 16)
+
+[node name="Cloud5" type="Sprite2D" parent="ColorRect"]
+position = Vector2(109, 476)
+scale = Vector2(5, 5)
+texture = ExtResource("1_63ed2")
+region_enabled = true
+region_rect = Rect2(32, 0, 48, 16)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 140
+
+[node name="CenterContainer" type="CenterContainer" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/CenterContainer"]
+custom_minimum_size = Vector2(280, 300)
+layout_mode = 2
+texture = SubResource("AtlasTexture_bijmv")
+
+[node name="CenterContainer2" type="CenterContainer" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/CenterContainer2"]
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 2
+texture = SubResource("AtlasTexture_fwoh3")
+
+[node name="Panel" type="Panel" parent="HSplitContainer/CenterContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/CenterContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/CenterContainer2/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/CenterContainer2/Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.282353, 0, 0.513726, 1)
+theme_override_font_sizes/font_size = 44
+text = "Bunny"
+
+[node name="Label2" type="Label" parent="HSplitContainer/CenterContainer2/Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.282353, 0, 0.513726, 1)
+theme_override_font_sizes/font_size = 30
+text = "Essential customer"
+
+[node name="Label3" type="Label" parent="HSplitContainer/CenterContainer2/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.282353, 0, 0.513726, 1)
+theme_override_font_sizes/font_size = 30
+text = "Bunny is a chef living in a
+burrow at 18 Meadow Lane."
+
+[node name="Button Container" type="HBoxContainer" parent="HSplitContainer/CenterContainer2/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 50
+
+[node name="Button" type="TextureButton" parent="HSplitContainer/CenterContainer2/Panel/VBoxContainer/Button Container"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = SubResource("AtlasTexture_xs8dj")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="HSplitContainer/CenterContainer2/Panel/VBoxContainer/Button Container/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -17.0
+offset_right = 30.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Select"
+
+[node name="Button2" type="TextureButton" parent="HSplitContainer/CenterContainer2/Panel/VBoxContainer/Button Container"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = SubResource("AtlasTexture_xs8dj")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="HSplitContainer/CenterContainer2/Panel/VBoxContainer/Button Container/Button2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -17.0
+offset_right = 23.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[connection signal="pressed" from="HSplitContainer/CenterContainer2/Panel/VBoxContainer/Button Container/Button" to="." method="_on_select_button_pressed"]
+[connection signal="pressed" from="HSplitContainer/CenterContainer2/Panel/VBoxContainer/Button Container/Button2" to="." method="_on_back_button_pressed"]

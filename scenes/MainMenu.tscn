@@ -1,14 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://bxk5t2v0l4v32"]
+[gd_scene load_steps=15 format=3 uid="uid://bxk5t2v0l4v32"]
 
+[ext_resource type="Script" uid="uid://cw71i6vhx3o5n" path="res://scenes/main_menu.gd" id="1_826wr"]
 [ext_resource type="Texture2D" uid="uid://dwv82efaxuyrt" path="res://ui/Cloud Tileset.png" id="1_l72w3"]
 [ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="1_yqorp"]
 [ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="3_826wr"]
-[ext_resource type="Script" path="res://scenes/bunny_button.gd" id="4_mipys"]
 [ext_resource type="Texture2D" uid="uid://dr0843owafqft" path="res://assets/animals/beaver + pests.png" id="4_ucygd"]
-[ext_resource type="Script" path="res://scenes/beaver_button.gd" id="5_826wr"]
 [ext_resource type="Texture2D" uid="uid://cla8lpbg41k8n" path="res://assets/animals/seagull.png" id="5_mipys"]
 
 [sub_resource type="FontFile" id="FontFile_0ykhv"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -89,6 +91,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_826wr")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
@@ -145,7 +148,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = SubResource("FontFile_0ykhv")
 theme_override_font_sizes/font_size = 48
-text = "Critter claims"
+text = "Critter Claims"
 
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -234,7 +237,6 @@ texture_normal = SubResource("AtlasTexture_ucygd")
 texture_pressed = SubResource("AtlasTexture_ucygd")
 texture_hover = SubResource("AtlasTexture_826wr")
 stretch_mode = 0
-script = ExtResource("4_mipys")
 
 [node name="beaver" type="TextureButton" parent="ColorRect/VBoxContainer/MarginContainer/Character Container"]
 custom_minimum_size = Vector2(200, 200)
@@ -243,7 +245,6 @@ texture_normal = SubResource("AtlasTexture_mipys")
 texture_pressed = SubResource("AtlasTexture_mipys")
 texture_hover = SubResource("AtlasTexture_7la6k")
 stretch_mode = 0
-script = ExtResource("5_826wr")
 
 [node name="seagull" type="TextureButton" parent="ColorRect/VBoxContainer/MarginContainer/Character Container"]
 custom_minimum_size = Vector2(200, 200)
@@ -253,7 +254,5 @@ texture_pressed = SubResource("AtlasTexture_8a8k8")
 texture_hover = SubResource("AtlasTexture_2nypq")
 stretch_mode = 0
 
-[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/Character Container/bunny" to="ColorRect/VBoxContainer/MarginContainer/Character Container/bunny" method="_on_pressed"]
-[connection signal="mouse_entered" from="ColorRect/VBoxContainer/MarginContainer/Character Container/beaver" to="ColorRect/VBoxContainer/MarginContainer/Character Container/beaver" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ColorRect/VBoxContainer/MarginContainer/Character Container/beaver" to="ColorRect/VBoxContainer/MarginContainer/Character Container/beaver" method="_on_mouse_exited"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/Character Container/beaver" to="ColorRect/VBoxContainer/MarginContainer/Character Container/beaver" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/Character Container/bunny" to="." method="_on_bunny_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/Character Container/beaver" to="." method="_on_beaver_pressed"]
