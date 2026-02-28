@@ -1,45 +1,142 @@
-[gd_scene load_steps=3 format=3 uid="uid://tfpg0kwqm54c"]
+[gd_scene load_steps=22 format=3 uid="uid://cmf3376sy8ayo"]
 
 [ext_resource type="Script" path="res://scenes/bunny_house_in.gd" id="1_hbs4e"]
 [ext_resource type="Texture2D" uid="uid://txwbemio6gc4" path="res://assets/houses/bunny_burrow_in_pixel.png" id="2_710rn"]
+[ext_resource type="Texture2D" uid="uid://dr32tbdsrj0h3" path="res://assets/furniture/TopDownHouse_DoorsAndWindows.png" id="2_g8oeg"]
+[ext_resource type="Texture2D" uid="uid://qalwg43enc61" path="res://assets/furniture/TopDownHouse_FurnitureState1.png" id="3_n1r6o"]
+[ext_resource type="Texture2D" uid="uid://cn0ji51u8pgfs" path="res://assets/furniture/doors + windows highlight.png" id="4_gxrtc"]
+[ext_resource type="Texture2D" uid="uid://dt45cy8t7vgsw" path="res://assets/furniture/furniture red highlight.png" id="6_vn77d"]
+[ext_resource type="Texture2D" uid="uid://c2kmulkwbfn2u" path="res://assets/furniture/TopDownHouse_SmallItems.png" id="7_eqolu"]
+[ext_resource type="Texture2D" uid="uid://cx0nw4fvli55o" path="res://assets/furniture/small items highlight.png" id="8_8x2ir"]
+[ext_resource type="Script" uid="uid://dmpst1t1610i2" path="res://scenes/pan.gd" id="9_eqolu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxrtc"]
+atlas = ExtResource("2_g8oeg")
+region = Rect2(100, 51, 25, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x2ir"]
+atlas = ExtResource("4_gxrtc")
+region = Rect2(101, 52, 27, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlef6"]
+atlas = ExtResource("3_n1r6o")
+region = Rect2(33, 64, 46, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdsmg"]
+atlas = ExtResource("6_vn77d")
+region = Rect2(35, 63, 46, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fn2f"]
+atlas = ExtResource("7_eqolu")
+region = Rect2(95, 87, 17, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b10tx"]
+atlas = ExtResource("8_8x2ir")
+region = Rect2(96, 88, 17, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn77d"]
+atlas = ExtResource("3_n1r6o")
+region = Rect2(0, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj586"]
+atlas = ExtResource("6_vn77d")
+region = Rect2(1, 31, 49, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqolu"]
+atlas = ExtResource("3_n1r6o")
+region = Rect2(96, 112, 16, 48)
+
+[sub_resource type="Animation" id="Animation_8x2ir"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eqolu"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.631373), Color(0, 0, 0, 0.619608)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qdsmg"]
+_data = {
+&"RESET": SubResource("Animation_8x2ir"),
+&"fade_out": SubResource("Animation_eqolu")
+}
 
 [node name="BunnyHouseIn" type="Node2D"]
+self_modulate = Color(0, 0, 0, 0.811765)
 script = ExtResource("1_hbs4e")
 
-[node name="BunnyBurrowInPixel" type="TextureButton" parent="."]
-offset_top = 2.0
-offset_right = 450.0
-offset_bottom = 321.0
-scale = Vector2(2.54688, 2.02083)
-texture_normal = ExtResource("2_710rn")
-stretch_mode = 0
+[node name="background" type="TextureRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 650.0
+texture = ExtResource("2_710rn")
 
 [node name="Window" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(150, 100)
-offset_left = -444.0
-offset_top = 337.0
-offset_right = -283.0
-offset_bottom = 449.0
+custom_minimum_size = Vector2(100, 100)
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 108.0
+offset_bottom = 142.0
+texture_normal = SubResource("AtlasTexture_gxrtc")
+texture_hover = SubResource("AtlasTexture_8x2ir")
 stretch_mode = 0
 
 [node name="Book shelf" type="TextureButton" parent="."]
-offset_left = -443.0
-offset_top = 209.0
-offset_right = -23.0
-offset_bottom = 277.0
+offset_left = 139.0
+offset_top = 60.0
+offset_right = 349.0
+offset_bottom = 292.0
+texture_normal = SubResource("AtlasTexture_qlef6")
+texture_hover = SubResource("AtlasTexture_qdsmg")
 stretch_mode = 0
 
-[node name="Stove" type="TextureButton" parent="."]
-offset_left = -206.0
-offset_top = 393.0
-offset_right = -81.0
-offset_bottom = 554.0
+[node name="pan" type="TextureButton" parent="."]
+offset_left = 625.0
+offset_top = 365.0
+offset_right = 702.0
+offset_bottom = 408.0
+texture_normal = SubResource("AtlasTexture_3fn2f")
+texture_hover = SubResource("AtlasTexture_b10tx")
 stretch_mode = 0
+script = ExtResource("9_eqolu")
 
 [node name="Table" type="TextureButton" parent="."]
-offset_left = 2.0
-offset_top = 67.0
-offset_right = 42.0
-offset_bottom = 107.0
+offset_left = 21.0
+offset_top = 455.0
+offset_right = 220.0
+offset_bottom = 615.0
+texture_normal = SubResource("AtlasTexture_vn77d")
+texture_hover = SubResource("AtlasTexture_oj586")
+stretch_mode = 0
 
-[connection signal="pressed" from="BunnyBurrowInPixel" to="." method="_on_bunny_burrow_in_pixel_pressed"]
+[node name="lamp" type="Sprite2D" parent="."]
+position = Vector2(262.5, 255.25)
+scale = Vector2(4.4375, 4.46875)
+texture = SubResource("AtlasTexture_eqolu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qdsmg")
+}
+
+[connection signal="pressed" from="pan" to="." method="_on_pan_pressed"]
