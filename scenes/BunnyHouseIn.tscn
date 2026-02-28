@@ -138,4 +138,6 @@ libraries = {
 }
 
 [connection signal="pressed" from="Window" to="." method="_on_window_pressed"]
+[connection signal="pressed" from="Book shelf" to="." method="_on_book_shelf_pressed"]
 [connection signal="pressed" from="pan" to="." method="_on_pan_pressed"]
+[connection signal="pressed" from="Table" to="." method="_on_table_pressed"]
