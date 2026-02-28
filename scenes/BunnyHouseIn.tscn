@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cmf3376sy8ayo"]
+[gd_scene load_steps=21 format=3 uid="uid://cmf3376sy8ayo"]
 
 [ext_resource type="Script" path="res://scenes/bunny_house_in.gd" id="1_hbs4e"]
 [ext_resource type="Texture2D" uid="uid://txwbemio6gc4" path="res://assets/houses/bunny_burrow_in_pixel.png" id="2_710rn"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dt45cy8t7vgsw" path="res://assets/furniture/furniture red highlight.png" id="6_vn77d"]
 [ext_resource type="Texture2D" uid="uid://c2kmulkwbfn2u" path="res://assets/furniture/TopDownHouse_SmallItems.png" id="7_eqolu"]
 [ext_resource type="Texture2D" uid="uid://cx0nw4fvli55o" path="res://assets/furniture/small items highlight.png" id="8_8x2ir"]
-[ext_resource type="Script" uid="uid://dmpst1t1610i2" path="res://scenes/pan.gd" id="9_eqolu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxrtc"]
 atlas = ExtResource("2_g8oeg")
@@ -118,7 +117,6 @@ offset_bottom = 408.0
 texture_normal = SubResource("AtlasTexture_3fn2f")
 texture_hover = SubResource("AtlasTexture_b10tx")
 stretch_mode = 0
-script = ExtResource("9_eqolu")
 
 [node name="Table" type="TextureButton" parent="."]
 offset_left = 21.0
@@ -139,4 +137,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_qdsmg")
 }
 
+[connection signal="pressed" from="Window" to="." method="_on_window_pressed"]
 [connection signal="pressed" from="pan" to="." method="_on_pan_pressed"]
