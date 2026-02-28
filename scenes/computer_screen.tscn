@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=3 uid="uid://vu15cifcs2pc"]
+
+[ext_resource type="Texture2D" uid="uid://qalwg43enc61" path="res://assets/furniture/TopDownHouse_FurnitureState1.png" id="1_gkxp2"]
+[ext_resource type="Texture2D" uid="uid://bikwdnihq3pto" path="res://assets/furniture/TopDownHouse_FloorsAndWalls.png" id="1_hd5qy"]
+[ext_resource type="Texture2D" uid="uid://ds3aulqaa661w" path="res://assets/furniture/pixil-frame-0.png" id="1_ucd4v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdo7l"]
+atlas = ExtResource("1_hd5qy")
+region = Rect2(16, 80, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd5qy"]
+atlas = ExtResource("1_gkxp2")
+region = Rect2(8, 32, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkxp2"]
+atlas = ExtResource("1_ucd4v")
+region = Rect2(136, 127, 751, 758)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -53.0
+offset_top = -72.0
+offset_right = 1275.0
+offset_bottom = 539.0
+texture = SubResource("AtlasTexture_sdo7l")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -12.0
+offset_top = 214.0
+offset_right = 1200.0
+offset_bottom = 691.0
+texture = SubResource("AtlasTexture_hd5qy")
+
+[node name="computer2" type="TextureRect" parent="."]
+self_modulate = Color(0.17, 0.17, 0.17, 0.568627)
+custom_minimum_size = Vector2(900, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -499.0
+offset_top = -277.0
+offset_right = 401.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_gkxp2")
+expand_mode = 1
+
+[node name="computer" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(900, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_gkxp2")
+expand_mode = 1
+
+[node name="essential" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.37
+anchor_right = 0.5
+anchor_bottom = 0.37
+offset_left = -346.0
+offset_top = -166.76
+offset_right = 357.0
+offset_bottom = 166.24
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="essential"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "Hastings Direct"
+
+[node name="Label2" type="Label" parent="essential"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "My insurance (Hastings Essential):"
+
+[node name="Label3" type="Label" parent="essential"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = " - Storm or flood damage ✅
+ - Escape of water ✅
+ - Theft or vandalism ✅
+ - Fire or smoke ✅
+ - Impact ✅
+ - Home emergency cover ❌"
