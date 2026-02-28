@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmf3376sy8ayo"]
+
+[ext_resource type="Script" uid="uid://bkn3jqwse7ndm" path="res://scenes/bunny_house_in.gd" id="1_hbs4e"]
+[ext_resource type="Texture2D" uid="uid://txwbemio6gc4" path="res://assets/houses/bunny_burrow_in_pixel.png" id="2_710rn"]
+
+[node name="BunnyHouseIn" type="Node2D"]
+script = ExtResource("1_hbs4e")
+
+[node name="BunnyBurrowInPixel" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(1.56599, 1.38913)
+texture = ExtResource("2_710rn")
+centered = false
