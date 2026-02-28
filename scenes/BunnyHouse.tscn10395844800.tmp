@@ -12,4 +12,4 @@ offset_bottom = 647.0
 texture_normal = ExtResource("1_mxha1")
 stretch_mode = 0
 
-[connection signal="pressed" from="house_texture" to="." method="_on_house_texture_pressed"]
+[connection signal="pressed" from="house_texture" to="house_texture" method="_on_pressed"]
