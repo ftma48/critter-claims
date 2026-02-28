@@ -1,0 +1,174 @@
+[gd_scene load_steps=28 format=3 uid="uid://c3sry1mf74dd6"]
+
+[ext_resource type="Script" uid="uid://b3xyp0s6h2yd" path="res://scenes/BunnyClaims/infestation.gd" id="1_dqyg5"]
+[ext_resource type="Texture2D" uid="uid://55hpw7t1vtfo" path="res://assets/houses/bunny_burrow_bad.png" id="2_lgoa4"]
+[ext_resource type="Texture2D" uid="uid://dj205bdeec43g" path="res://assets/overlays/bugs/frame_00_delay-0.1s.png" id="3_r8pau"]
+[ext_resource type="Texture2D" uid="uid://c420krvghpy34" path="res://assets/overlays/bugs/frame_01_delay-0.1s.png" id="4_5u23m"]
+[ext_resource type="Texture2D" uid="uid://bd5svotxkkwx" path="res://assets/overlays/bugs/frame_02_delay-0.1s.png" id="5_qwn7y"]
+[ext_resource type="Texture2D" uid="uid://dv3xtx0810q7o" path="res://assets/overlays/bugs/frame_03_delay-0.1s.png" id="6_jwbjp"]
+[ext_resource type="Texture2D" uid="uid://cbioig8aou84v" path="res://assets/overlays/bugs/frame_04_delay-0.1s.png" id="7_nfrid"]
+[ext_resource type="Texture2D" uid="uid://dcbkerytn38ho" path="res://assets/overlays/bugs/frame_05_delay-0.1s.png" id="8_liip6"]
+[ext_resource type="Texture2D" uid="uid://dr4a42rq6x1hn" path="res://assets/overlays/bugs/frame_06_delay-0.1s.png" id="9_nuqcx"]
+[ext_resource type="Texture2D" uid="uid://1xl10q4qgbdl" path="res://assets/overlays/bugs/frame_07_delay-0.1s.png" id="10_tw4n2"]
+[ext_resource type="Texture2D" uid="uid://ca7lvh5snn8mi" path="res://assets/overlays/bugs/frame_08_delay-0.1s.png" id="11_mul1u"]
+[ext_resource type="Texture2D" uid="uid://4ide4yj1q2l0" path="res://assets/overlays/bugs/frame_09_delay-0.1s.png" id="12_xl0ae"]
+[ext_resource type="Texture2D" uid="uid://cyusbyomfqni6" path="res://assets/overlays/bugs/frame_10_delay-0.1s.png" id="13_2hv2p"]
+[ext_resource type="Texture2D" uid="uid://c3e1f0pp7ndpt" path="res://assets/overlays/bugs/frame_11_delay-0.1s.png" id="14_0jj04"]
+[ext_resource type="Texture2D" uid="uid://b8iglwbwimyu4" path="res://assets/overlays/bugs/frame_12_delay-0.1s.png" id="15_i6y7f"]
+[ext_resource type="Texture2D" uid="uid://c85sycqiobi8v" path="res://assets/overlays/bugs/frame_13_delay-0.1s.png" id="16_jmdvg"]
+[ext_resource type="Texture2D" uid="uid://b1iihct0bdt4r" path="res://assets/overlays/bugs/frame_14_delay-0.1s.png" id="17_woug1"]
+[ext_resource type="Texture2D" uid="uid://txjh5a6mww0c" path="res://assets/overlays/bugs/frame_15_delay-0.1s.png" id="18_dfngc"]
+[ext_resource type="Texture2D" uid="uid://fbspuk4ombf3" path="res://assets/overlays/bugs/frame_16_delay-0.1s.png" id="19_oq7lt"]
+[ext_resource type="Texture2D" uid="uid://bqkqj4seq82hi" path="res://assets/overlays/bugs/frame_17_delay-0.1s.png" id="20_0mlry"]
+[ext_resource type="Texture2D" uid="uid://cvi20wlmw3ypn" path="res://assets/overlays/bugs/frame_18_delay-0.1s.png" id="21_vj632"]
+[ext_resource type="Texture2D" uid="uid://jjrcvkfyjd58" path="res://assets/overlays/bugs/frame_19_delay-0.1s.png" id="22_phfv7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksx5u"]
+atlas = ExtResource("2_lgoa4")
+region = Rect2(21, 1, 119, 59)
+
+[sub_resource type="Animation" id="Animation_xur2q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.631373)]
+}
+
+[sub_resource type="Animation" id="Animation_a02gp"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.866667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.631373), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oo7y6"]
+_data = {
+&"RESET": SubResource("Animation_xur2q"),
+&"fade_in": SubResource("Animation_a02gp")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_svj2v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_r8pau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5u23m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qwn7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jwbjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nfrid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_liip6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nuqcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tw4n2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mul1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xl0ae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2hv2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0jj04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_i6y7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jmdvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_woug1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dfngc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_oq7lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0mlry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_vj632")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_phfv7")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Infestation" type="Node2D"]
+modulate = Color(1, 1, 1, 0.631373)
+script = ExtResource("1_dqyg5")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 644.0
+texture = SubResource("AtlasTexture_ksx5u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_oo7y6")
+}
+
+[node name="bug1" type="AnimatedSprite2D" parent="."]
+position = Vector2(297, 576)
+sprite_frames = SubResource("SpriteFrames_svj2v")
+animation = &"run"
+frame_progress = 0.983895
+
+[node name="bug2" type="AnimatedSprite2D" parent="."]
+position = Vector2(803, 194)
+sprite_frames = SubResource("SpriteFrames_svj2v")
+animation = &"run"
+
+[node name="bug3" type="AnimatedSprite2D" parent="."]
+position = Vector2(845, 486)
+sprite_frames = SubResource("SpriteFrames_svj2v")
+animation = &"run"
+
+[node name="bug4" type="AnimatedSprite2D" parent="."]
+position = Vector2(301, 318)
+sprite_frames = SubResource("SpriteFrames_svj2v")
+animation = &"run"
+frame_progress = 0.983895
+
+[node name="bug5" type="AnimatedSprite2D" parent="."]
+position = Vector2(551, 186)
+sprite_frames = SubResource("SpriteFrames_svj2v")
+animation = &"run"
+frame_progress = 0.983895
