@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://dcfv14mp0whrl"]
+[gd_scene load_steps=3 format=3 uid="uid://dcfv14mp0whrl"]
+
+[ext_resource type="Texture2D" uid="uid://txwbemio6gc4" path="res://assets/houses/bunny_burrow_in_pixel.png" id="1_vatd2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgre6"]
+atlas = ExtResource("1_vatd2")
+region = Rect2(0, 1, 117, 57)
 
 [node name="BrokenWindow" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 646.0
+texture = SubResource("AtlasTexture_hgre6")
