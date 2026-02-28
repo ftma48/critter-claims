@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4fkrgd0cfldn"
-path="res://.godot/imported/kitchen_LRK.png-00c57f63e365c60659ab9519d894ad5d.ctex"
+uid="uid://c2kmulkwbfn2u"
+path="res://.godot/imported/TopDownHouse_SmallItems.png-032605393054206cecb7fd3b83cf98bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/furniture/kitchen_LRK.png"
-dest_files=["res://.godot/imported/kitchen_LRK.png-00c57f63e365c60659ab9519d894ad5d.ctex"]
+source_file="res://assets/furniture/TopDownHouse_SmallItems.png"
+dest_files=["res://.godot/imported/TopDownHouse_SmallItems.png-032605393054206cecb7fd3b83cf98bb.ctex"]
 
 [params]
 

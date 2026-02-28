@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqdpgw341kuis"
-path="res://.godot/imported/decorations_LRK.png-77e5d8bc978d55f461e5eb70a00cac81.ctex"
+uid="uid://dr32tbdsrj0h3"
+path="res://.godot/imported/TopDownHouse_DoorsAndWindows.png-684f690bc406a5ab57fe8aebe966619c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/furniture/decorations_LRK.png"
-dest_files=["res://.godot/imported/decorations_LRK.png-77e5d8bc978d55f461e5eb70a00cac81.ctex"]
+source_file="res://assets/furniture/TopDownHouse_DoorsAndWindows.png"
+dest_files=["res://.godot/imported/TopDownHouse_DoorsAndWindows.png-684f690bc406a5ab57fe8aebe966619c.ctex"]
 
 [params]
 
