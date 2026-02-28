@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjjki4gjcpbpk"]
+
+[ext_resource type="Texture2D" uid="uid://dcp6vrkykdv3s" path="res://assets/houses/bunny_burrow_out_pixel.png" id="1_mxha1"]
+[ext_resource type="Texture2D" uid="uid://txwbemio6gc4" path="res://assets/houses/bunny_burrow_in_pixel.png" id="2_p13f4"]
+
+[node name="outside" type="Node2D"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 1151.0
+offset_bottom = 647.0
+texture_normal = ExtResource("1_mxha1")
+texture_pressed = ExtResource("2_p13f4")
+stretch_mode = 0
