@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bxk5t2v0l4v32"]
+[gd_scene load_steps=19 format=3 uid="uid://bxk5t2v0l4v32"]
 
-[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_826wr"]
+[ext_resource type="Script" uid="uid://cw71i6vhx3o5n" path="res://scenes/main_menu.gd" id="1_826wr"]
 [ext_resource type="Texture2D" uid="uid://dwv82efaxuyrt" path="res://ui/Cloud Tileset.png" id="1_l72w3"]
 [ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="1_yqorp"]
 [ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="3_826wr"]
@@ -71,7 +71,7 @@ region = Rect2(18, 50, 12, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mipys"]
 atlas = ExtResource("4_ucygd")
-region = Rect2(220, 16, 64, 52)
+region = Rect2(220, 8, 64, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7la6k"]
 atlas = ExtResource("4_ucygd")
@@ -84,6 +84,58 @@ region = Rect2(128, 240, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2nypq"]
 atlas = ExtResource("5_mipys")
 region = Rect2(176, 240, 16, 16)
+
+[sub_resource type="Animation" id="Animation_826wr"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ucygd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mipys"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8a8k8"]
+_data = {
+&"RESET": SubResource("Animation_ucygd"),
+&"fade_in": SubResource("Animation_mipys"),
+&"fade_out": SubResource("Animation_826wr")
+}
 
 [node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 15
@@ -132,49 +184,45 @@ texture = ExtResource("1_l72w3")
 region_enabled = true
 region_rect = Rect2(32, 0, 48, 16)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-offset_right = 1152.0
-offset_bottom = 648.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_constants/separation = 60
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = SubResource("FontFile_0ykhv")
 theme_override_font_sizes/font_size = 48
 text = "Critter Claims"
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = SubResource("FontFile_0ykhv")
 theme_override_font_sizes/font_size = 30
 text = "Hastings Direct"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button Container" type="HBoxContainer" parent="ColorRect/VBoxContainer/VBoxContainer2"]
+[node name="Button Container" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_constants/separation = 50
 
-[node name="Settings" type="TextureButton" parent="ColorRect/VBoxContainer/VBoxContainer2/Button Container"]
+[node name="Settings" type="TextureButton" parent="VBoxContainer/VBoxContainer2/Button Container"]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 6
 texture_normal = SubResource("AtlasTexture_2wh52")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer2/Button Container/Settings"]
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/Button Container/Settings"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -190,14 +238,14 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 36
 text = "Settings"
 
-[node name="Exit" type="TextureButton" parent="ColorRect/VBoxContainer/VBoxContainer2/Button Container"]
+[node name="Exit" type="TextureButton" parent="VBoxContainer/VBoxContainer2/Button Container"]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 6
 texture_normal = SubResource("AtlasTexture_2wh52")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer2/Button Container/Exit"]
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/Button Container/Exit"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -213,24 +261,24 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 36
 text = "Exit"
 
-[node name="Text" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer2"]
+[node name="Text" type="Label" parent="VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = SubResource("FontFile_0ykhv")
 theme_override_font_sizes/font_size = 28
 text = "Select your character to begin"
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 50
 
-[node name="Character Container" type="HBoxContainer" parent="ColorRect/VBoxContainer/MarginContainer"]
+[node name="Character Container" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 60
 
-[node name="bunny" type="TextureButton" parent="ColorRect/VBoxContainer/MarginContainer/Character Container"]
+[node name="bunny" type="TextureButton" parent="VBoxContainer/MarginContainer/Character Container"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ucygd")
@@ -238,7 +286,7 @@ texture_pressed = SubResource("AtlasTexture_ucygd")
 texture_hover = SubResource("AtlasTexture_826wr")
 stretch_mode = 0
 
-[node name="beaver" type="TextureButton" parent="ColorRect/VBoxContainer/MarginContainer/Character Container"]
+[node name="beaver" type="TextureButton" parent="VBoxContainer/MarginContainer/Character Container"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_mipys")
@@ -246,7 +294,7 @@ texture_pressed = SubResource("AtlasTexture_mipys")
 texture_hover = SubResource("AtlasTexture_7la6k")
 stretch_mode = 0
 
-[node name="seagull" type="TextureButton" parent="ColorRect/VBoxContainer/MarginContainer/Character Container"]
+[node name="seagull" type="TextureButton" parent="VBoxContainer/MarginContainer/Character Container"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_8a8k8")
@@ -254,5 +302,10 @@ texture_pressed = SubResource("AtlasTexture_8a8k8")
 texture_hover = SubResource("AtlasTexture_2nypq")
 stretch_mode = 0
 
-[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/Character Container/bunny" to="." method="_on_bunny_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/MarginContainer/Character Container/beaver" to="." method="_on_beaver_pressed"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8a8k8")
+}
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Character Container/bunny" to="." method="_on_bunny_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Character Container/beaver" to="." method="_on_beaver_pressed"]

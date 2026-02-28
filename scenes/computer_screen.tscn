@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://vu15cifcs2pc"]
+[gd_scene load_steps=10 format=3 uid="uid://vu15cifcs2pc"]
 
 [ext_resource type="Texture2D" uid="uid://qalwg43enc61" path="res://assets/furniture/TopDownHouse_FurnitureState1.png" id="1_gkxp2"]
 [ext_resource type="Texture2D" uid="uid://bikwdnihq3pto" path="res://assets/furniture/TopDownHouse_FloorsAndWalls.png" id="1_hd5qy"]
+[ext_resource type="Script" uid="uid://dn5oabojm8uy4" path="res://scenes/computer_screen.gd" id="1_rwtdv"]
 [ext_resource type="Texture2D" uid="uid://ds3aulqaa661w" path="res://assets/furniture/pixil-frame-0.png" id="1_ucd4v"]
+[ext_resource type="Texture2D" uid="uid://uni5jmywfgo" path="res://ui/phone-call.png" id="5_jxtm8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sdo7l"]
 atlas = ExtResource("1_hd5qy")
@@ -16,6 +18,9 @@ region = Rect2(8, 32, 32, 16)
 atlas = ExtResource("1_ucd4v")
 region = Rect2(136, 127, 751, 758)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_63s4g"]
+atlas = ExtResource("5_jxtm8")
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -23,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rwtdv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -79,39 +85,45 @@ size_flags_vertical = 4
 texture = SubResource("AtlasTexture_gkxp2")
 expand_mode = 1
 
-[node name="essential" type="VBoxContainer" parent="."]
+[node name="webpage" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.37
 anchor_right = 0.5
 anchor_bottom = 0.37
-offset_left = -346.0
-offset_top = -166.76
-offset_right = 357.0
-offset_bottom = 166.24
+offset_left = -349.0
+offset_top = -171.76
+offset_right = 354.0
+offset_bottom = 161.24
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="essential"]
+[node name="Hastings Direct" type="Label" parent="webpage"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 34
 text = "Hastings Direct"
 
-[node name="Label2" type="Label" parent="essential"]
+[node name="TitleLabel" type="Label" parent="webpage"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
-text = "My insurance (Hastings Essential):"
 
-[node name="Label3" type="Label" parent="essential"]
+[node name="ContentLabel" type="Label" parent="webpage"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
-text = " - Storm or flood damage ✅
- - Escape of water ✅
- - Theft or vandalism ✅
- - Fire or smoke ✅
- - Impact ✅
- - Home emergency cover ❌"
+
+[node name="CallButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 848.0
+offset_top = 320.0
+offset_right = 912.0
+offset_bottom = 380.0
+texture_normal = SubResource("AtlasTexture_63s4g")
+texture_pressed = SubResource("AtlasTexture_63s4g")
+texture_hover = SubResource("AtlasTexture_63s4g")
+ignore_texture_size = true
+stretch_mode = 0

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WebPageData" load_steps=2 format=3 uid="uid://b7ki7l1512265"]
+
+[ext_resource type="Script" uid="uid://nhtt4y54fg51" path="res://scripts/WebPageData.gd" id="1_2hoh5"]
+
+[resource]
+script = ExtResource("1_2hoh5")
+title = "My insurance (Hastings Essential):"
+content = " - Storm or flood damage ✅
+ - Escape of water ✅
+ - Theft or vandalism ✅
+ - Fire or smoke ✅
+ - Impact ✅
+ - Home emergency cover ❌"
+call = false
+metadata/_custom_type_script = "uid://nhtt4y54fg51"
