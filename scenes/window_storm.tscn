@@ -173,5 +173,4 @@ libraries = {
 [node name="ChatterPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_5ase3")
 
-[connection signal="pressed" from="CanvasLayer/ButtonPanel/Claim" to="." method="_on_claim_pressed"]
 [connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

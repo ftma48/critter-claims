@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_jgnkj")
-title = ""
-content = ""
-call = false
+title = "Claim: Fire, smoke, lightning, earthquake or explosion"
+content = "✅ What's covered:Loss or damage caused by fire, smoke, lightning, earthquake or explosion.❌ What isn’t covered:Loss or damage:• Caused by tobacco burns, scorching, melting, warping, singeing or other forms of heatdistortion unless accompanied by flames• Caused by smog, smoke or gases from agricultural or industrial emissions"
+call = true
 dialogue = Array[String]([])
 metadata/_custom_type_script = "uid://nhtt4y54fg51"
