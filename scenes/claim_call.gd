@@ -66,6 +66,10 @@ var log_w = ""
 var log_c = ""
 
 func _ready():
+	if GameState.current_character == GameState.Character.BUNNY:
+		$Bunny.visible = true
+	elif GameState.current_character == GameState.Character.SEAGULL:
+		$Seagull.visible = true
 	exit_button.visible = false
 	label_w.text = ""
 	label_c.text = ""
