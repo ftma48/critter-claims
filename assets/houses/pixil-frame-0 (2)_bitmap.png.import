@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://d0q55ks3aokke"
+path="res://.godot/imported/pixil-frame-0 (2)_bitmap.png-a00c264f7f76b8287bf99d6cdc44febd.res"
+
+[deps]
+
+source_file="res://assets/houses/pixil-frame-0 (2)_bitmap.png"
+dest_files=["res://.godot/imported/pixil-frame-0 (2)_bitmap.png-a00c264f7f76b8287bf99d6cdc44febd.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

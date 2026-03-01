@@ -1,39 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://4yg2yjwbwo0y"]
+[gd_scene load_steps=18 format=3 uid="uid://cdw3d3l0f80jw"]
 
-[ext_resource type="Script" uid="uid://f4whip0gk67e" path="res://scenes/bunny_house.gd" id="1_p13f4"]
-[ext_resource type="Texture2D" uid="uid://dwv82efaxuyrt" path="res://ui/Cloud Tileset.png" id="2_p13f4"]
-[ext_resource type="Texture2D" uid="uid://bhoabn36xe844" path="res://assets/houses/pixil-frame-0 (2).png" id="3_p13f4"]
-[ext_resource type="Texture2D" uid="uid://cmhfrfrt2xtrj" path="res://assets/houses/pixil-frame-0 (3).png" id="4_rg4jm"]
-[ext_resource type="BitMap" uid="uid://d0q55ks3aokke" path="res://assets/houses/pixil-frame-0 (2)_bitmap.png" id="5_q0dgy"]
-[ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="6_10uc3"]
+[ext_resource type="Script" uid="uid://d1ytbtgbq4ivf" path="res://scenes/seagull_house.gd" id="1_5xk4y"]
+[ext_resource type="Texture2D" uid="uid://dwv82efaxuyrt" path="res://ui/Cloud Tileset.png" id="1_sphu0"]
+[ext_resource type="Texture2D" uid="uid://jbenxj3lwx6a" path="res://assets/houses/pixil-frame-0 (4).png" id="2_yttkd"]
+[ext_resource type="Texture2D" uid="uid://bkorvhowewe2x" path="res://assets/houses/pixil-frame-0 (5).png" id="3_2u87w"]
+[ext_resource type="BitMap" uid="uid://qnlh3055hq72" path="res://assets/houses/pixil-frame-0 (4)_bitmap.png" id="4_yttkd"]
+[ext_resource type="Texture2D" uid="uid://cla8lpbg41k8n" path="res://assets/animals/seagull.png" id="6_6sa1r"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rg4jm"]
-atlas = ExtResource("3_p13f4")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xk4y"]
+atlas = ExtResource("2_yttkd")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q0dgy"]
-atlas = ExtResource("4_rg4jm")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yluce"]
-atlas = ExtResource("6_10uc3")
-region = Rect2(0, 48, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j7ed0"]
-atlas = ExtResource("6_10uc3")
-region = Rect2(16, 48, 16, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_05dft"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yluce")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j7ed0")
-}],
-"loop": true,
-"name": &"hop",
-"speed": 5.0
-}]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sa1r"]
+atlas = ExtResource("3_2u87w")
 
 [sub_resource type="Animation" id="Animation_826wr"]
 resource_name = "fade_out"
@@ -87,8 +65,44 @@ _data = {
 &"fade_out": SubResource("Animation_826wr")
 }
 
-[node name="BunnyHouse" type="Node2D"]
-script = ExtResource("1_p13f4")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgvdt"]
+atlas = ExtResource("6_6sa1r")
+region = Rect2(192, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sptvy"]
+atlas = ExtResource("6_6sa1r")
+region = Rect2(208, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmuwi"]
+atlas = ExtResource("6_6sa1r")
+region = Rect2(224, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rm3j"]
+atlas = ExtResource("6_6sa1r")
+region = Rect2(240, 240, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_de5he"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgvdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sptvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmuwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rm3j")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[node name="SeagullHouse" type="Node2D"]
+script = ExtResource("1_5xk4y")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(37.9455, 24.2072)
@@ -99,60 +113,53 @@ polygon = PackedVector2Array(-48, -33, 1261, -34, 1261, -34, 1264, 703, -58, 719
 [node name="Cloud" type="Sprite2D" parent="Polygon2D"]
 position = Vector2(201, 88)
 scale = Vector2(5, 5)
-texture = ExtResource("2_p13f4")
+texture = ExtResource("1_sphu0")
 region_enabled = true
 region_rect = Rect2(0, 48, 48, 16)
 
 [node name="Cloud2" type="Sprite2D" parent="Polygon2D"]
 position = Vector2(959, 182)
 scale = Vector2(5, 5)
-texture = ExtResource("2_p13f4")
+texture = ExtResource("1_sphu0")
 region_enabled = true
 region_rect = Rect2(16, 32, 64, 16)
 
 [node name="Cloud3" type="Sprite2D" parent="Polygon2D"]
 position = Vector2(1069, 519)
 scale = Vector2(5, 5)
-texture = ExtResource("2_p13f4")
+texture = ExtResource("1_sphu0")
 region_enabled = true
 region_rect = Rect2(0, 48, 48, 16)
 
 [node name="Cloud4" type="Sprite2D" parent="Polygon2D"]
 position = Vector2(326, 308)
 scale = Vector2(5, 5)
-texture = ExtResource("2_p13f4")
+texture = ExtResource("1_sphu0")
 region_enabled = true
 region_rect = Rect2(0, 16, 48, 16)
 
 [node name="Cloud5" type="Sprite2D" parent="Polygon2D"]
 position = Vector2(109, 476)
 scale = Vector2(5, 5)
-texture = ExtResource("2_p13f4")
+texture = ExtResource("1_sphu0")
 region_enabled = true
 region_rect = Rect2(32, 0, 48, 16)
 
-[node name="house_texture" type="TextureButton" parent="."]
-offset_top = 2.0
-offset_right = 1151.0
-offset_bottom = 649.0
-texture_normal = SubResource("AtlasTexture_rg4jm")
-texture_hover = SubResource("AtlasTexture_q0dgy")
-texture_click_mask = ExtResource("5_q0dgy")
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 1148.0
+offset_bottom = 653.0
+texture_normal = SubResource("AtlasTexture_5xk4y")
+texture_hover = SubResource("AtlasTexture_6sa1r")
+texture_click_mask = ExtResource("4_yttkd")
 stretch_mode = 0
-
-[node name="bunny" type="AnimatedSprite2D" parent="."]
-position = Vector2(-88, 510)
-scale = Vector2(10, 10)
-sprite_frames = SubResource("SpriteFrames_05dft")
-animation = &"hop"
-frame_progress = 0.812432
-flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_8a8k8")
 }
 
-[connection signal="mouse_entered" from="house_texture" to="." method="_on_house_texture_mouse_entered"]
-[connection signal="mouse_exited" from="house_texture" to="." method="_on_house_texture_mouse_exited"]
-[connection signal="pressed" from="house_texture" to="." method="_on_house_texture_pressed"]
+[node name="seagull" type="AnimatedSprite2D" parent="."]
+position = Vector2(-108, 368)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_de5he")
+animation = &"fly"

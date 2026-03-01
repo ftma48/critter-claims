@@ -69,6 +69,14 @@ region = Rect2(2, 51, 12, 13)
 atlas = ExtResource("3_826wr")
 region = Rect2(18, 50, 12, 14)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a8k8"]
+atlas = ExtResource("5_mipys")
+region = Rect2(128, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nypq"]
+atlas = ExtResource("5_mipys")
+region = Rect2(176, 240, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mipys"]
 atlas = ExtResource("4_ucygd")
 region = Rect2(220, 8, 64, 60)
@@ -77,13 +85,20 @@ region = Rect2(220, 8, 64, 60)
 atlas = ExtResource("4_ucygd")
 region = Rect2(220, 16, 64, 56)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8a8k8"]
-atlas = ExtResource("5_mipys")
-region = Rect2(128, 240, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2nypq"]
-atlas = ExtResource("5_mipys")
-region = Rect2(176, 240, 16, 16)
+[sub_resource type="Animation" id="Animation_826wr"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_ucygd"]
 length = 0.001
@@ -208,6 +223,7 @@ text = "Hastings Direct"
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 20
 
 [node name="Button Container" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -270,7 +286,6 @@ text = "Select your character to begin"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_top = 50
 
 [node name="Character Container" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
@@ -282,24 +297,24 @@ theme_override_constants/separation = 60
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ucygd")
-texture_pressed = SubResource("AtlasTexture_ucygd")
+texture_pressed = SubResource("AtlasTexture_826wr")
 texture_hover = SubResource("AtlasTexture_826wr")
-stretch_mode = 0
-
-[node name="beaver" type="TextureButton" parent="VBoxContainer/MarginContainer/Character Container"]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_mipys")
-texture_pressed = SubResource("AtlasTexture_mipys")
-texture_hover = SubResource("AtlasTexture_7la6k")
 stretch_mode = 0
 
 [node name="seagull" type="TextureButton" parent="VBoxContainer/MarginContainer/Character Container"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_8a8k8")
-texture_pressed = SubResource("AtlasTexture_8a8k8")
+texture_pressed = SubResource("AtlasTexture_2nypq")
 texture_hover = SubResource("AtlasTexture_2nypq")
+stretch_mode = 0
+
+[node name="beaver" type="TextureButton" parent="VBoxContainer/MarginContainer/Character Container"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_mipys")
+texture_pressed = SubResource("AtlasTexture_7la6k")
+texture_hover = SubResource("AtlasTexture_7la6k")
 stretch_mode = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -307,5 +322,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_8a8k8")
 }
 
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Button Container/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Character Container/bunny" to="." method="_on_bunny_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Character Container/seagull" to="." method="_on_seagull_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Character Container/beaver" to="." method="_on_beaver_pressed"]
