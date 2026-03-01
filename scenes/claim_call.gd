@@ -45,6 +45,17 @@ var conversations = {
 		["C", "That's such a relief. Thank you.", "14:05"],
 		["W", "Of course. Please don't dispose of any damaged items before the assessor visits. Take care.", "14:05"],
 	],
+	"storm": [
+		["W", "Hastings Direct claims, how can I help you today?", "16:34"],
+		["C", "Hi, there's been a storm and a branch came down and smashed straight through my window.", "16:34"],
+		["W", "Can I take your policy number?", "16:35"],
+		["C", "Yes, it's 5EA9ULL-002.", "16:36"],
+		["W", "Thank you. Storm damage and falling branches causing impact damage are covered under your policy.", "16:36"],
+		["C", "Wonderful, thank you so much.", "16:38"],
+		["W", "Of course. In the meantime, please take some photos of the damage before any repairs are made. Is there anything else I can help with?", "16:38"],
+		["C", "No, that's everything. Thank you!", "16:39"],
+		["W", "You're welcome. Stay safe. Goodbye!", "16:39"],
+	],
 }
 
 var current_lines = []
@@ -66,6 +77,8 @@ func _ready():
 			claim = "fire"
 		elif "water" in title:
 			claim = "sink"
+		elif "storm" in title:
+			claim = "storm"
 
 	if claim == "" or not conversations.has(claim):
 		claim = "burglary"
