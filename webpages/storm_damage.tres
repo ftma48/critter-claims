@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WebPageData" load_steps=2 format=3 uid="uid://t8n7hm8xhca8"]
+
+[ext_resource type="Script" uid="uid://nhtt4y54fg51" path="res://scripts/WebPageData.gd" id="1_jgnkj"]
+
+[resource]
+script = ExtResource("1_jgnkj")
+title = ""
+content = ""
+call = false
+dialogue = Array[String]([])
+metadata/_custom_type_script = "uid://nhtt4y54fg51"

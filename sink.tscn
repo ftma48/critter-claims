@@ -1,16 +1,160 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcsshv5tnnq0f"]
+[gd_scene load_steps=16 format=3 uid="uid://dcsshv5tnnq0f"]
 
 [ext_resource type="Texture2D" uid="uid://o8pkjrsibtdn" path="res://assets/houses/SeagullHouseInside.png" id="1_0f0hj"]
+[ext_resource type="Script" uid="uid://bmu84h60u25g0" path="res://sink.gd" id="1_2i27s"]
+[ext_resource type="Texture2D" uid="uid://00e4h451fssu" path="res://assets/overlays/sink leaking.png" id="2_hg6cf"]
+[ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="4_lpvri"]
+[ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="5_hb3gy"]
+[ext_resource type="Texture2D" uid="uid://dhot0fj45mk6m" path="res://ui/Buttons-house.png" id="6_32bcg"]
+[ext_resource type="AudioStream" uid="uid://ta3kajjcxv6c" path="res://assets/audio/chatter.mp3" id="7_nkkmm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hg6cf"]
 atlas = ExtResource("1_0f0hj")
 region = Rect2(8, 28, 288, 144)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ia01"]
+atlas = ExtResource("2_hg6cf")
+region = Rect2(4, 2, 32, 19)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[sub_resource type="AtlasTexture" id="AtlasTexture_my3ye"]
+atlas = ExtResource("4_lpvri")
+region = Rect2(0, 48, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0yeh"]
+atlas = ExtResource("5_hb3gy")
+region = Rect2(128, 200, 48, 16)
+
+[sub_resource type="Animation" id="Animation_ucygd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mipys"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_826wr"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8a8k8"]
+_data = {
+&"RESET": SubResource("Animation_ucygd"),
+&"fade_in": SubResource("Animation_mipys"),
+&"fade_out": SubResource("Animation_826wr")
+}
+
+[node name="Sink" type="Node2D"]
+script = ExtResource("1_2i27s")
+
+[node name="bg" type="TextureRect" parent="."]
 offset_left = -622.0
 offset_top = -222.0
 offset_right = 1500.0
 offset_bottom = 1062.0
 texture = SubResource("AtlasTexture_hg6cf")
+
+[node name="sink" type="TextureRect" parent="."]
+offset_left = 454.0
+offset_top = 233.0
+offset_right = 689.0
+offset_bottom = 402.0
+texture = SubResource("AtlasTexture_0ia01")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 403.0
+offset_top = 502.0
+offset_right = 950.0
+offset_bottom = 579.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 9.0
+offset_right = 530.0
+offset_bottom = 74.0
+autowrap_mode = 2
+
+[node name="Sprite2D" type="TextureRect" parent="CanvasLayer"]
+offset_left = 933.0
+offset_top = 406.0
+offset_right = 1178.0
+offset_bottom = 656.0
+texture = SubResource("AtlasTexture_my3ye")
+
+[node name="ButtonPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_left = 400.0
+offset_top = 449.0
+offset_right = 669.0
+offset_bottom = 608.0
+
+[node name="Claim" type="TextureButton" parent="CanvasLayer/ButtonPanel"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 41.0
+offset_right = 85.0
+offset_bottom = 61.0
+scale = Vector2(3.99587, 4.47776)
+texture_normal = SubResource("AtlasTexture_b0yeh")
+
+[node name="Exit" type="TextureButton" parent="CanvasLayer"]
+offset_right = 82.0
+offset_bottom = 87.0
+texture_normal = ExtResource("6_32bcg")
+
+[node name="CanvasLayer_ButtonPanel_Claim#Label2" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.25853
+offset_top = 2.67991
+offset_right = 58.2585
+offset_bottom = 13.6799
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.423389, 0.380931)
+text = "File  claim"
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8a8k8")
+}
+
+[node name="ChatterPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_nkkmm")
