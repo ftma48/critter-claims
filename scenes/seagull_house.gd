@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var animation = $AnimationPlayer
 @onready var seagull = $seagull
+@onready var happy = $Happy
 
 var move_distance = 300.0
 var speed = 150.0
@@ -9,6 +10,7 @@ var start_x: float
 var can_move: bool = false
 
 func _ready():
+	happy.play()
 	animation.play("fade_in")
 	await animation.animation_finished
 	start_x = seagull.position.x
