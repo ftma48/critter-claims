@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://qalwg43enc61" path="res://assets/furniture/TopDownHouse_FurnitureState1.png" id="1_gkxp2"]
 [ext_resource type="Texture2D" uid="uid://bikwdnihq3pto" path="res://assets/furniture/TopDownHouse_FloorsAndWalls.png" id="1_hd5qy"]
-[ext_resource type="Script" path="res://scenes/computer_screen.gd" id="1_rwtdv"]
+[ext_resource type="Script" uid="uid://dn5oabojm8uy4" path="res://scenes/computer_screen.gd" id="1_rwtdv"]
 [ext_resource type="Texture2D" uid="uid://ds3aulqaa661w" path="res://assets/furniture/pixil-frame-0.png" id="1_ucd4v"]
 [ext_resource type="Texture2D" uid="uid://uni5jmywfgo" path="res://ui/phone-call.png" id="5_jxtm8"]
 

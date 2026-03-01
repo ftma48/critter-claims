@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dcfv14mp0whrl"]
 
 [ext_resource type="Texture2D" uid="uid://txwbemio6gc4" path="res://assets/houses/bunny_burrow_in_pixel.png" id="1_vatd2"]
-[ext_resource type="Script" path="res://scenes/BunnyClaims/broken_window.gd" id="1_vg84r"]
+[ext_resource type="Script" uid="uid://bpwak7yveybuc" path="res://scenes/BunnyClaims/broken_window.gd" id="1_vg84r"]
 [ext_resource type="Texture2D" uid="uid://cy2mbaabv2ck" path="res://assets/furniture/broken window.png" id="2_hgre6"]
 [ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="4_hnbc0"]
 [ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="5_wubk2"]
@@ -115,6 +115,7 @@ offset_right = 669.0
 offset_bottom = 608.0
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/ButtonPanel"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 41.0
 offset_right = 85.0

@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3wapwmnwfksc"]
+[gd_scene load_steps=16 format=3 uid="uid://b3wapwmnwfksc"]
 
 [ext_resource type="Script" uid="uid://rhcj4ml6q8uk" path="res://scenes/seagull_house_in.gd" id="1_iscd0"]
 [ext_resource type="Texture2D" uid="uid://o8pkjrsibtdn" path="res://assets/houses/SeagullHouseInside.png" id="1_vq85g"]
 [ext_resource type="Texture2D" uid="uid://dr32tbdsrj0h3" path="res://assets/furniture/TopDownHouse_DoorsAndWindows.png" id="2_sevy3"]
 [ext_resource type="Texture2D" uid="uid://cn0ji51u8pgfs" path="res://assets/furniture/doors + windows highlight.png" id="3_iscd0"]
+[ext_resource type="Texture2D" uid="uid://cgkdaat641v2e" path="res://assets/furniture/TopDownHouse_FurnitureState2.png" id="5_lt6xu"]
+[ext_resource type="Texture2D" uid="uid://u80f6y65ite7" path="res://assets/furniture/sink.png" id="6_kfkuh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_chc4b"]
 atlas = ExtResource("1_vq85g")
@@ -16,6 +18,14 @@ region = Rect2(131, 51, 26, 29)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fl07f"]
 atlas = ExtResource("3_iscd0")
 region = Rect2(132, 52, 28, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63u5c"]
+atlas = ExtResource("5_lt6xu")
+region = Rect2(96, 192, 32, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ri8y"]
+atlas = ExtResource("6_kfkuh")
+region = Rect2(19, 11, 32, 19)
 
 [sub_resource type="Animation" id="Animation_ucygd"]
 length = 0.001
@@ -86,6 +96,15 @@ offset_bottom = 213.0
 texture_normal = SubResource("AtlasTexture_6h571")
 texture_pressed = SubResource("AtlasTexture_fl07f")
 texture_hover = SubResource("AtlasTexture_fl07f")
+stretch_mode = 0
+
+[node name="Sink" type="TextureButton" parent="."]
+offset_left = 584.0
+offset_top = 236.0
+offset_right = 716.0
+offset_bottom = 318.0
+texture_normal = SubResource("AtlasTexture_63u5c")
+texture_hover = SubResource("AtlasTexture_8ri8y")
 stretch_mode = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
