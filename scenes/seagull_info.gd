@@ -1,11 +1,11 @@
 extends MarginContainer
 
 @onready var animation = $AnimationPlayer
-var bunny_house = preload("res://scenes/BunnyHouse.tscn")
+var seagull_house = preload("res://scenes/SeagullHouse.tscn")
 var main_menu = preload("res://scenes/MainMenu.tscn")
 
 func _ready():
-	$HSplitContainer/CenterContainer/bunny.play("default")
+	$HSplitContainer/CenterContainer/seagull.play("default")
 	modulate.a = 0
 	animation.play("fade_in")
 	await animation.animation_finished
@@ -13,7 +13,7 @@ func _ready():
 func _on_select_button_pressed() -> void:
 	animation.play("fade_out")
 	await animation.animation_finished
-	get_tree().change_scene_to_packed(bunny_house)
+	get_tree().change_scene_to_packed(seagull_house)
 
 func _on_back_button_pressed() -> void:
 	animation.play("fade_out")

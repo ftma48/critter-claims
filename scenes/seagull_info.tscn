@@ -1,27 +1,41 @@
-[gd_scene load_steps=15 format=3 uid="uid://dch8cy1856q2i"]
+[gd_scene load_steps=17 format=3 uid="uid://d1r8q0mru800q"]
 
-[ext_resource type="Texture2D" uid="uid://dwv82efaxuyrt" path="res://ui/Cloud Tileset.png" id="1_63ed2"]
-[ext_resource type="Script" uid="uid://dn2vic32hh546" path="res://scenes/bunny_info.gd" id="1_bijmv"]
-[ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="2_duteh"]
-[ext_resource type="Texture2D" uid="uid://bf8bv3bsjwvh1" path="res://ui/SpriteSheet.png" id="4_rhci6"]
-[ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="5_0c654"]
+[ext_resource type="Script" uid="uid://ccypnirc2fknf" path="res://scenes/seagull_info.gd" id="1_1a7o3"]
+[ext_resource type="Texture2D" uid="uid://dwv82efaxuyrt" path="res://ui/Cloud Tileset.png" id="2_606on"]
+[ext_resource type="Texture2D" uid="uid://cla8lpbg41k8n" path="res://assets/animals/seagull.png" id="3_1a7o3"]
+[ext_resource type="Texture2D" uid="uid://bf8bv3bsjwvh1" path="res://ui/SpriteSheet.png" id="4_igb1v"]
+[ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="5_mp82s"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bijmv"]
-atlas = ExtResource("2_duteh")
-region = Rect2(0, 48, 16, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_606on"]
+atlas = ExtResource("3_1a7o3")
+region = Rect2(192, 240, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rhci6"]
-atlas = ExtResource("2_duteh")
-region = Rect2(16, 48, 16, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6l3w"]
+atlas = ExtResource("3_1a7o3")
+region = Rect2(208, 240, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0c654"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_igb1v"]
+atlas = ExtResource("3_1a7o3")
+region = Rect2(224, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp82s"]
+atlas = ExtResource("3_1a7o3")
+region = Rect2(240, 240, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fgr5d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bijmv")
+"texture": SubResource("AtlasTexture_606on")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rhci6")
+"texture": SubResource("AtlasTexture_e6l3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igb1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp82s")
 }],
 "loop": true,
 "name": &"default",
@@ -29,11 +43,11 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwoh3"]
-atlas = ExtResource("4_rhci6")
+atlas = ExtResource("4_igb1v")
 region = Rect2(32, 1120, 183, 280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xs8dj"]
-atlas = ExtResource("5_0c654")
+atlas = ExtResource("5_mp82s")
 region = Rect2(192, 200, 32, 16)
 
 [sub_resource type="Animation" id="Animation_826wr"]
@@ -94,7 +108,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bijmv")
+script = ExtResource("1_1a7o3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
@@ -103,35 +117,35 @@ color = Color(0.223529, 0.729412, 1, 1)
 [node name="Cloud" type="Sprite2D" parent="ColorRect"]
 position = Vector2(201, 88)
 scale = Vector2(5, 5)
-texture = ExtResource("1_63ed2")
+texture = ExtResource("2_606on")
 region_enabled = true
 region_rect = Rect2(0, 48, 48, 16)
 
 [node name="Cloud2" type="Sprite2D" parent="ColorRect"]
 position = Vector2(959, 182)
 scale = Vector2(5, 5)
-texture = ExtResource("1_63ed2")
+texture = ExtResource("2_606on")
 region_enabled = true
 region_rect = Rect2(16, 32, 64, 16)
 
 [node name="Cloud3" type="Sprite2D" parent="ColorRect"]
 position = Vector2(1069, 519)
 scale = Vector2(5, 5)
-texture = ExtResource("1_63ed2")
+texture = ExtResource("2_606on")
 region_enabled = true
 region_rect = Rect2(0, 48, 48, 16)
 
 [node name="Cloud4" type="Sprite2D" parent="ColorRect"]
 position = Vector2(326, 308)
 scale = Vector2(5, 5)
-texture = ExtResource("1_63ed2")
+texture = ExtResource("2_606on")
 region_enabled = true
 region_rect = Rect2(0, 16, 48, 16)
 
 [node name="Cloud5" type="Sprite2D" parent="ColorRect"]
 position = Vector2(109, 476)
 scale = Vector2(5, 5)
-texture = ExtResource("1_63ed2")
+texture = ExtResource("2_606on")
 region_enabled = true
 region_rect = Rect2(32, 0, 48, 16)
 
@@ -146,14 +160,14 @@ theme_override_constants/separation = 400
 
 [node name="CenterContainer" type="CenterContainer" parent="HSplitContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
 
-[node name="bunny" type="AnimatedSprite2D" parent="HSplitContainer/CenterContainer"]
-position = Vector2(147, 340)
-scale = Vector2(15, 15)
-sprite_frames = SubResource("SpriteFrames_0c654")
-frame_progress = 0.189347
-flip_h = true
+[node name="seagull" type="AnimatedSprite2D" parent="HSplitContainer/CenterContainer"]
+position = Vector2(154, -11)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_fgr5d")
+frame_progress = 0.396715
 
 [node name="CenterContainer2" type="CenterContainer" parent="HSplitContainer"]
 layout_mode = 2
@@ -184,22 +198,21 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.282353, 0, 0.513726, 1)
 theme_override_font_sizes/font_size = 44
-text = "Bunny"
+text = "Seagull"
 
 [node name="Label2" type="Label" parent="HSplitContainer/CenterContainer2/Panel/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.282353, 0, 0.513726, 1)
 theme_override_font_sizes/font_size = 30
-text = "Hastings Essential customer"
+text = "Hastings Premier customer"
 
 [node name="Label3" type="Label" parent="HSplitContainer/CenterContainer2/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.282353, 0, 0.513726, 1)
 theme_override_font_sizes/font_size = 30
-text = "Bunny is a chef living in a
-burrow at 18 Meadow Lane."
+text = "Seagull is ?????????????"
 
 [node name="Button Container" type="HBoxContainer" parent="HSplitContainer/CenterContainer2/Panel/VBoxContainer"]
 layout_mode = 2
