@@ -1,12 +1,20 @@
-[gd_scene load_steps=16 format=3 uid="uid://dcsshv5tnnq0f"]
+[gd_scene load_steps=27 format=3 uid="uid://dl8n8jsxrckgf"]
 
 [ext_resource type="Texture2D" uid="uid://o8pkjrsibtdn" path="res://assets/houses/SeagullHouseInside.png" id="1_0f0hj"]
 [ext_resource type="Script" uid="uid://bmu84h60u25g0" path="res://sink.gd" id="1_2i27s"]
 [ext_resource type="Texture2D" uid="uid://00e4h451fssu" path="res://assets/overlays/sink leaking.png" id="2_hg6cf"]
-[ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="4_lpvri"]
+[ext_resource type="Texture2D" uid="uid://dpfpvuvihkyxo" path="res://assets/furniture/Tools.png" id="4_hb3gy"]
 [ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="5_hb3gy"]
+[ext_resource type="Texture2D" uid="uid://b3t7vbvywc6ut" path="res://assets/furniture/ToolsHighlighted.png" id="5_yakv8"]
 [ext_resource type="Texture2D" uid="uid://dhot0fj45mk6m" path="res://ui/Buttons-house.png" id="6_32bcg"]
+[ext_resource type="Texture2D" uid="uid://cla8lpbg41k8n" path="res://assets/animals/seagull.png" id="6_qbagd"]
 [ext_resource type="AudioStream" uid="uid://ta3kajjcxv6c" path="res://assets/audio/chatter.mp3" id="7_nkkmm"]
+[ext_resource type="Texture2D" uid="uid://br41m5qt3uchy" path="res://assets/overlays/Water/WaterFall/water png/row-1-column-1.png" id="9_p3ba1"]
+[ext_resource type="Texture2D" uid="uid://3qpt8ptpjcr6" path="res://assets/overlays/Water/WaterFall/water png/row-1-column-2.png" id="10_yakv8"]
+[ext_resource type="Texture2D" uid="uid://bvugtguvfyk1a" path="res://assets/overlays/Water/WaterFall/water png/row-1-column-3.png" id="11_qbagd"]
+[ext_resource type="Texture2D" uid="uid://c3wv10f8ys4au" path="res://assets/overlays/Water/WaterFall/water png/row-1-column-4.png" id="12_0a666"]
+[ext_resource type="Texture2D" uid="uid://destbeu6efmai" path="res://assets/overlays/Water/WaterFall/water png/row-1-column-5.png" id="13_6lfk1"]
+[ext_resource type="Texture2D" uid="uid://b76u42awyejub" path="res://assets/overlays/Water/WaterFall/water png/row-1-column-6.png" id="14_51tjp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hg6cf"]
 atlas = ExtResource("1_0f0hj")
@@ -16,11 +24,19 @@ region = Rect2(8, 28, 288, 144)
 atlas = ExtResource("2_hg6cf")
 region = Rect2(4, 2, 32, 19)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_my3ye"]
-atlas = ExtResource("4_lpvri")
-region = Rect2(0, 48, 16, 19)
+[sub_resource type="AtlasTexture" id="AtlasTexture_32bcg"]
+atlas = ExtResource("4_hb3gy")
+region = Rect2(130, 18, 12, 12)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b0yeh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a666"]
+atlas = ExtResource("5_yakv8")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my3ye"]
+atlas = ExtResource("6_qbagd")
+region = Rect2(128, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lfk1"]
 atlas = ExtResource("5_hb3gy")
 region = Rect2(128, 200, 48, 16)
 
@@ -76,6 +92,32 @@ _data = {
 &"fade_out": SubResource("Animation_826wr")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_sqnaa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_p3ba1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yakv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qbagd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0a666")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6lfk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_51tjp")
+}],
+"loop": true,
+"name": &"waterfall",
+"speed": 6.0
+}]
+
 [node name="Sink" type="Node2D"]
 script = ExtResource("1_2i27s")
 
@@ -93,9 +135,19 @@ offset_right = 689.0
 offset_bottom = 402.0
 texture = SubResource("AtlasTexture_0ia01")
 
+[node name="Tool" type="TextureButton" parent="."]
+offset_left = 847.0
+offset_top = 305.0
+offset_right = 914.0
+offset_bottom = 378.0
+texture_normal = SubResource("AtlasTexture_32bcg")
+texture_hover = SubResource("AtlasTexture_0a666")
+stretch_mode = 0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
 offset_left = 403.0
 offset_top = 502.0
 offset_right = 950.0
@@ -110,14 +162,13 @@ offset_bottom = 74.0
 autowrap_mode = 2
 
 [node name="Sprite2D" type="TextureRect" parent="CanvasLayer"]
-offset_left = 933.0
-offset_top = 406.0
-offset_right = 1178.0
-offset_bottom = 656.0
+offset_left = 128.0
+offset_top = 407.0
+offset_right = 329.0
+offset_bottom = 613.0
 texture = SubResource("AtlasTexture_my3ye")
 
 [node name="ButtonPanel" type="Panel" parent="CanvasLayer"]
-visible = false
 offset_left = 400.0
 offset_top = 449.0
 offset_right = 669.0
@@ -125,16 +176,33 @@ offset_bottom = 608.0
 
 [node name="Claim" type="TextureButton" parent="CanvasLayer/ButtonPanel"]
 layout_mode = 0
-offset_left = 35.0
-offset_top = 41.0
-offset_right = 85.0
-offset_bottom = 61.0
+offset_left = 36.0
+offset_top = 43.0
+offset_right = 86.0
+offset_bottom = 63.0
 scale = Vector2(3.99587, 4.47776)
-texture_normal = SubResource("AtlasTexture_b0yeh")
+texture_normal = SubResource("AtlasTexture_6lfk1")
+
+[node name="Label2" type="Label" parent="CanvasLayer/ButtonPanel/Claim"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.50465
+offset_top = 2.45659
+offset_right = 54.5046
+offset_bottom = 13.4566
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.423389, 0.380931)
+text = "File  claim"
+autowrap_mode = 2
 
 [node name="Exit" type="TextureButton" parent="CanvasLayer"]
-offset_right = 82.0
-offset_bottom = 87.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 83.0
+offset_bottom = 86.0
 texture_normal = ExtResource("6_32bcg")
 
 [node name="CanvasLayer_ButtonPanel_Claim#Label2" type="Label" parent="."]
@@ -158,3 +226,14 @@ libraries = {
 
 [node name="ChatterPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_nkkmm")
+
+[node name="flood" type="AnimatedSprite2D" parent="."]
+position = Vector2(596, 528)
+scale = Vector2(3.01172, 2.83203)
+sprite_frames = SubResource("SpriteFrames_sqnaa")
+animation = &"waterfall"
+frame_progress = 0.566092
+
+[connection signal="pressed" from="Tool" to="." method="_on_tool_pressed"]
+[connection signal="pressed" from="CanvasLayer/ButtonPanel/Claim" to="." method="_on_claim_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

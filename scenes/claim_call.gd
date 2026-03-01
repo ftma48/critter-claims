@@ -23,7 +23,7 @@ var conversations = {
 	],
 	"fire": [
 		["W", "Hastings Direct claims, how can I help you today?", "14:02"],
-		["C", "There's been a fire in my burrow. The walls, the furniture — everything is damaged!", "14:02"],
+		["C", "There's been a fire in my burrow. The walls, the furniture, everything is damaged!", "14:02"],
 		["W", "I'm so sorry. Are you safe? Is everyone out of the property?", "14:03"],
 		["C", "Yes, I got out in time. But the damage is terrible.", "14:03"],
 		["W", "That's the most important thing. Can I take your policy number?", "14:03"],
