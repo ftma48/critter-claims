@@ -35,3 +35,10 @@ func _on_table_pressed() -> void:
 	$AnimationPlayer.play("fade_out")
 	await $AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://scenes/BunnyClaims/MissingTV.tscn")
+
+
+func _on_exit_pressed() -> void:
+	happy_music.stop()
+	$AnimationPlayer.play("fade_out")
+	await $AnimationPlayer.animation_finished
+	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")

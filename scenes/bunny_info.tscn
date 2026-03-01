@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dch8cy1856q2i"]
+[gd_scene load_steps=16 format=3 uid="uid://dch8cy1856q2i"]
 
 [ext_resource type="Texture2D" uid="uid://dwv82efaxuyrt" path="res://ui/Cloud Tileset.png" id="1_63ed2"]
 [ext_resource type="Script" uid="uid://dn2vic32hh546" path="res://scenes/bunny_info.gd" id="1_bijmv"]
 [ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="2_duteh"]
 [ext_resource type="Texture2D" uid="uid://bf8bv3bsjwvh1" path="res://ui/SpriteSheet.png" id="4_rhci6"]
 [ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="5_0c654"]
+[ext_resource type="AudioStream" uid="uid://cr5an4uhpxkjt" path="res://assets/audio/Happy Intro.mp3" id="6_rhci6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bijmv"]
 atlas = ExtResource("2_duteh")
@@ -257,6 +258,10 @@ text = "Back"
 libraries = {
 &"": SubResource("AnimationLibrary_8a8k8")
 }
+
+[node name="Happy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rhci6")
+volume_db = -10.0
 
 [connection signal="mouse_entered" from="HSplitContainer/CenterContainer2/Panel/VBoxContainer/Button Container/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="HSplitContainer/CenterContainer2/Panel/VBoxContainer/Button Container/Button" to="." method="_on_button_mouse_exited"]

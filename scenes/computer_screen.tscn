@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://baps5qjd6t5hv"]
+[gd_scene load_steps=20 format=3 uid="uid://baps5qjd6t5hv"]
 
 [ext_resource type="Texture2D" uid="uid://qalwg43enc61" path="res://assets/furniture/TopDownHouse_FurnitureState1.png" id="1_gkxp2"]
 [ext_resource type="Texture2D" uid="uid://bikwdnihq3pto" path="res://assets/furniture/TopDownHouse_FloorsAndWalls.png" id="1_hd5qy"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c7p2f8cp22osg" path="res://ui/PhoneCallHighlight.png" id="6_63s4g"]
 [ext_resource type="Texture2D" uid="uid://dhot0fj45mk6m" path="res://ui/Buttons-house.png" id="6_jxtm8"]
 [ext_resource type="AudioStream" uid="uid://ta3kajjcxv6c" path="res://assets/audio/chatter.mp3" id="8_8spq2"]
+[ext_resource type="AudioStream" uid="uid://boaw12faul1jg" path="res://assets/audio/Phone.mp3" id="9_2new7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sdo7l"]
 atlas = ExtResource("1_hd5qy")
@@ -223,6 +224,9 @@ libraries = {
 
 [node name="ChatterPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_8spq2")
+
+[node name="Ringing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_2new7")
 
 [connection signal="pressed" from="CallButton" to="." method="_on_call_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

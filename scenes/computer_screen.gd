@@ -6,6 +6,7 @@ extends Control
 @onready var dialogue_label = $CanvasLayer/DialoguePanel/DialogueLabel
 @onready var webpage_node = $webpage
 @onready var chatter = $ChatterPlayer
+@onready var ringing = $Ringing
 
 var default_page = preload("res://webpages/my_insurance_essential.tres")
 var lines: Array = []
@@ -56,6 +57,7 @@ func _on_exit_pressed() -> void:
 
 
 func _on_call_button_pressed() -> void:
+	ringing.play()
 	var tree = get_tree()
 	$AnimationPlayer.play("fade_out")
 	await $AnimationPlayer.animation_finished

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://4yg2yjwbwo0y"]
+[gd_scene load_steps=17 format=3 uid="uid://4yg2yjwbwo0y"]
 
 [ext_resource type="Script" uid="uid://f4whip0gk67e" path="res://scenes/bunny_house.gd" id="1_p13f4"]
 [ext_resource type="Texture2D" uid="uid://dwv82efaxuyrt" path="res://ui/Cloud Tileset.png" id="2_p13f4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cmhfrfrt2xtrj" path="res://assets/houses/pixil-frame-0 (3).png" id="4_rg4jm"]
 [ext_resource type="BitMap" uid="uid://d0q55ks3aokke" path="res://assets/houses/pixil-frame-0 (2)_bitmap.png" id="5_q0dgy"]
 [ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="6_10uc3"]
+[ext_resource type="AudioStream" uid="uid://cr5an4uhpxkjt" path="res://assets/audio/Happy Intro.mp3" id="7_yluce"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rg4jm"]
 atlas = ExtResource("3_p13f4")
@@ -152,6 +153,10 @@ flip_h = true
 libraries = {
 &"": SubResource("AnimationLibrary_8a8k8")
 }
+
+[node name="Happy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_yluce")
+volume_db = -10.0
 
 [connection signal="mouse_entered" from="house_texture" to="." method="_on_house_texture_mouse_entered"]
 [connection signal="mouse_exited" from="house_texture" to="." method="_on_house_texture_mouse_exited"]

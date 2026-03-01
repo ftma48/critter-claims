@@ -37,12 +37,14 @@ func _input(event):
 			chatter.play()
 		else:
 			$CanvasLayer/Panel.visible = false
-			button_panel.visible = true
 			chatter.stop()
+			if GameState.tv_seen:
+				button_panel.visible = true
+			else:
+
+				$CanvasLayer/Exit.visible = true
 
 
-
-	
 func _on_exit_pressed() -> void:
 	$AnimationPlayer.play("fade_out")
 	await $AnimationPlayer.animation_finished

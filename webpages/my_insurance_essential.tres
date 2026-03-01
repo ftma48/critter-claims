@@ -18,8 +18,8 @@ content = "✅ What's included:
 • Accidental damage
 • Legal expenses cover
 
-📋 Policy number: HE-2024-00847
-Renewal date: 14 March 2025"
+📋 Policy number: UNNY-00
+Renewal date: 05 April 2026"
 call = false
 dialogue = Array[String](["Let me check what my Hastings Essential policy actually covers.", "I need to see if my situation qualifies before I make a claim.", "Here we go — let's see what's included..."])
 metadata/_custom_type_script = "uid://nhtt4y54fg51"

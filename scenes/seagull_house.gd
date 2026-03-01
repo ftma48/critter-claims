@@ -26,5 +26,4 @@ func _process(delta: float) -> void:
 func _on_house_texture_pressed() -> void:
 	animation.play("fade_out")
 	await animation.animation_finished
-	
-	get_tree().change_scene_to_file("res://webpages/seagull_house_in.tscn")
+	get_tree().change_scene_to_file("res://scenes/seagull_house_in.tscn")

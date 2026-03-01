@@ -15,5 +15,5 @@ distortion unless accompanied by flames
 • Caused by smog, smoke or gases from agricultural or industrial emissions
 "
 call = true
-dialogue = Array[String](["There was a fire in my burrow. Everything is burnt...", "I have insurance, hopefully fire damage is covered.", "Fire and smoke damage — yes, that's in my policy!", "Let me read the full details before I proceed."])
+dialogue = Array[String](["There was a fire in my burrow. Everything is burnt...", "I have insurance, hopefully fire damage is covered.", "Fire, smoke, lightning, earthquake or explosions — yes, that's in my policy!", "Let me read the full details."])
 metadata/_custom_type_script = "uid://nhtt4y54fg51"

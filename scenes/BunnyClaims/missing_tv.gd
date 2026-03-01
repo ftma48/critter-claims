@@ -39,12 +39,12 @@ func _input(event):
 			label.text = lines[current_line]
 			chatter.play()
 		else:
+			$CanvasLayer/Panel.visible = false
+			chatter.stop()
 			if GameState.window_seen:
-				$CanvasLayer/Panel.visible = false
 				button_panel.visible = true
-
-
-
+			else:
+				$CanvasLayer/Exit.visible = true
 
 
 func _on_exit_pressed() -> void:

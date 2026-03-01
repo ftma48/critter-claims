@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cmf3376sy8ayo"]
+[gd_scene load_steps=25 format=3 uid="uid://cmf3376sy8ayo"]
 
 [ext_resource type="Script" uid="uid://bkn3jqwse7ndm" path="res://scenes/bunny_house_in.gd" id="1_hbs4e"]
 [ext_resource type="Texture2D" uid="uid://txwbemio6gc4" path="res://assets/houses/bunny_burrow_in_pixel.png" id="2_710rn"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cx0nw4fvli55o" path="res://assets/furniture/small items highlight.png" id="8_8x2ir"]
 [ext_resource type="AudioStream" uid="uid://c1h0xlrgewmsy" path="res://assets/audio/Happy.mp3" id="9_8x2ir"]
 [ext_resource type="AudioStream" uid="uid://bkapxfiswix1y" path="res://assets/audio/glass.mp3" id="9_eqolu"]
+[ext_resource type="Texture2D" uid="uid://dhot0fj45mk6m" path="res://ui/Buttons-house.png" id="11_qdsmg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxrtc"]
 atlas = ExtResource("2_g8oeg")
@@ -25,7 +26,7 @@ region = Rect2(33, 64, 46, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qdsmg"]
 atlas = ExtResource("6_vn77d")
-region = Rect2(35, 63, 46, 49)
+region = Rect2(34, 63, 48, 49)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3fn2f"]
 atlas = ExtResource("7_eqolu")
@@ -162,7 +163,16 @@ volume_db = -25.0
 [node name="Glass" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_eqolu")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Exit" type="TextureButton" parent="CanvasLayer"]
+offset_right = 82.0
+offset_bottom = 87.0
+scale = Vector2(0.583377, 0.54686)
+texture_normal = ExtResource("11_qdsmg")
+
 [connection signal="pressed" from="Window" to="." method="_on_window_pressed"]
 [connection signal="pressed" from="Book shelf" to="." method="_on_book_shelf_pressed"]
 [connection signal="pressed" from="pan" to="." method="_on_pan_pressed"]
 [connection signal="pressed" from="Table" to="." method="_on_table_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

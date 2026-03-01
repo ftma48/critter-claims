@@ -255,6 +255,7 @@ stream = ExtResource("17_8adr7")
 
 [node name="Poof" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_vwvpp")
+volume_db = -5.0
 
 [node name="Fire2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_pn6jn")
