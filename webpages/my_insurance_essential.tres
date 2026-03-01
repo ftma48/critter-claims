@@ -13,12 +13,12 @@ content = "✅ What's included:
 • Impact damage (e.g. falling trees)
 • Fire, smoke, lightning, earthquake or explosions
 
-❌ Not included: 
+ 
 • Home emergency cover
 • Accidental damage
 • Legal expenses cover
 
-📋 Policy number: 8UNNY-00
+📋 Policy number: UNNY-00
 Renewal date: 05 April 2026"
 call = false
 dialogue = Array[String]([])

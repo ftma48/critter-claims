@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_xnsf7")
 title = "My Policy: Hastings Premier"
-content = "✅ What's included:• Storm or flood damage• Escape of water or oil• Theft • Vandalism or malicious damage• Impact damage (e.g. falling trees)• Fire, smoke, lightning, earthquake or explosions • Home emergency cover• Accidental damage• Legal expenses cover📋 Policy number: GULL-09 Renewal date: 9 October 2026"
+content = "✅ What's included:• Storm or flood damage• Escape of water or oil• Theft • Vandalism or malicious damage• Impact damage (e.g. falling trees)• Fire, smoke, lightning, earthquake or explosions • Home emergency cover• Accidental damage• Legal expenses cover📋 Policy number: GULL-09Renewal date: 05 April 2026"
 call = false
 dialogue = Array[String]([])
 metadata/_custom_type_script = "uid://nhtt4y54fg51"

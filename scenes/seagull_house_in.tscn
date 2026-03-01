@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cnc3nrche38rb"]
+[gd_scene load_steps=16 format=3 uid="uid://b3wapwmnwfksc"]
 
 [ext_resource type="Script" uid="uid://rhcj4ml6q8uk" path="res://scenes/seagull_house_in.gd" id="1_iscd0"]
 [ext_resource type="Texture2D" uid="uid://o8pkjrsibtdn" path="res://assets/houses/SeagullHouseInside.png" id="1_vq85g"]
