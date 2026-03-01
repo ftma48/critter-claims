@@ -23,6 +23,19 @@ var conversations = {
 		["C", "No, that's everything. Thank you so much!", "09:18"],
 		["W", "You're welcome. Take care. Goodbye!", "09:18"],
 	],
+	"sink": [
+		["W", "Hastings Direct claims, how can I help you today?", "11:22"],
+		["C", "Hi, I have a bit of a situation. My sink pipe was leaking, so I tried to fix it myself... and I think I made it a lot worse.", "11:22"],
+		["W", "I see. Can I take your policy number?", "11:23"],
+		["C", "Yes, it's 5EA9ULL-002.", "11:24"],
+		["W", "Thank you. I'm not 100% sure whether this is covered without checking further.", "11:24"],
+		["C", "Oh... so it might not be?", "11:25"],
+		["W", "I'd need to pass this to my manager. Can I take your number and email contact you later?", "11:25"],
+		["C", "Of course. It's 07777 777 777 and S_Squawk@coastmail.com.", "11:26"],
+		["W", "Perfect. Someone will be in touch later today.", "11:26"],
+		["C", "That's okay, thank you for your help.", "11:27"],
+		["W", "Of course. Take care. Goodbye!", "11:27"],
+	],
 	"fire": [
 		["W", "Hastings Direct claims, how can I help you today?", "14:02"],
 		["C", "There's been a fire in my burrow. The walls, the furniture, everything is damaged!", "14:02"],
@@ -33,6 +46,17 @@ var conversations = {
 		["W", "Thank you. Fire and smoke damage is fully covered under your policy. I'm raising an urgent claim right now.", "14:04"],
 		["C", "That's such a relief. Thank you.", "14:05"],
 		["W", "Of course. Please don't dispose of any damaged items before the assessor visits. Take care.", "14:05"],
+	],
+	"storm": [
+		["W", "Hastings Direct claims, how can I help you today?", "16:34"],
+		["C", "Hi, there's been a storm and a branch came down and smashed straight through my window.", "16:34"],
+		["W", "Can I take your policy number?", "16:35"],
+		["C", "Yes, it's 5EA9ULL-002.", "16:36"],
+		["W", "Thank you. Storm damage and falling branches causing impact damage are covered under your policy.", "16:36"],
+		["C", "Wonderful, thank you so much.", "16:38"],
+		["W", "Of course. In the meantime, please take some photos of the damage before any repairs are made. Is there anything else I can help with?", "16:38"],
+		["C", "No, that's everything. Thank you!", "16:39"],
+		["W", "You're welcome. Stay safe. Goodbye!", "16:39"],
 	],
 }
 
@@ -53,6 +77,10 @@ func _ready():
 			claim = "burglary"
 		elif "fire" in title:
 			claim = "fire"
+		elif "water" in title:
+			claim = "sink"
+		elif "storm" in title:
+			claim = "storm"
 
 	if claim == "" or not conversations.has(claim):
 		claim = "burglary"
