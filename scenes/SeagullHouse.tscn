@@ -160,7 +160,7 @@ libraries = {
 }
 
 [node name="seagull" type="AnimatedSprite2D" parent="."]
-position = Vector2(-108, 368)
+position = Vector2(-91, 382)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_de5he")
 animation = &"fly"

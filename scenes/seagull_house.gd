@@ -5,7 +5,7 @@ extends Node2D
 @onready var happy = $Happy
 
 var move_distance = 300.0
-var speed = 150.0
+var speed = 200.0
 var start_x: float
 var can_move: bool = false
 
