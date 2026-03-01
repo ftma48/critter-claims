@@ -125,8 +125,10 @@ func _end_call():
 	exit_button.visible = true
 
 func _on_exit_pressed() -> void:
-	var tree = get_tree()
+	print("exit pressed")
 	if GameState.current_character == GameState.Character.BUNNY:
-		get_tree().change_scene_to_packed(bunny_house)
+		print("bunny")
+		get_tree().change_scene_to_file("res://scenes/BunnyHouseIn.tscn")
 	elif GameState.current_character == GameState.Character.SEAGULL:
-		get_tree().change_scene_to_packed(seagull_house)
+		print("seagull")
+		get_tree().change_scene_to_file("res://scenes/seagull_house_in.tscn")

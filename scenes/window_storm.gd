@@ -3,6 +3,7 @@ extends Node2D
 @onready var label = $CanvasLayer/Panel/Label
 @onready var button_panel = $CanvasLayer/ButtonPanel
 @onready var chatter = $ChatterPlayer
+@onready var glass_sound = $Glass
 
 var lines = []
 var current_line = 0
@@ -15,6 +16,7 @@ func _ready():
 		"It must have been the storm last night!",
 		"I should report this to my insurance company..."
 	]
+	glass_sound.play()
 	$AnimationPlayer.play("fade_in")
 	await $AnimationPlayer.animation_finished
 	label.text = lines[0]
