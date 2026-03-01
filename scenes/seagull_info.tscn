@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://d1r8q0mru800q"]
+[gd_scene load_steps=18 format=3 uid="uid://d1r8q0mru800q"]
 
 [ext_resource type="Script" uid="uid://ccypnirc2fknf" path="res://scenes/seagull_info.gd" id="1_1a7o3"]
 [ext_resource type="Texture2D" uid="uid://dwv82efaxuyrt" path="res://ui/Cloud Tileset.png" id="2_606on"]
 [ext_resource type="Texture2D" uid="uid://cla8lpbg41k8n" path="res://assets/animals/seagull.png" id="3_1a7o3"]
 [ext_resource type="Texture2D" uid="uid://bf8bv3bsjwvh1" path="res://ui/SpriteSheet.png" id="4_igb1v"]
 [ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="5_mp82s"]
+[ext_resource type="AudioStream" uid="uid://cr5an4uhpxkjt" path="res://assets/audio/Happy Intro.mp3" id="6_606on"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_606on"]
 atlas = ExtResource("3_1a7o3")
@@ -271,6 +272,10 @@ text = "Back"
 libraries = {
 &"": SubResource("AnimationLibrary_8a8k8")
 }
+
+[node name="Happy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_606on")
+volume_db = -10.0
 
 [connection signal="mouse_entered" from="HSplitContainer/CenterContainer2/Panel/VBoxContainer/Button Container/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="HSplitContainer/CenterContainer2/Panel/VBoxContainer/Button Container/Button" to="." method="_on_button_mouse_exited"]

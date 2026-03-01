@@ -3,8 +3,10 @@ extends MarginContainer
 @onready var animation = $AnimationPlayer
 var seagull_house = preload("res://scenes/SeagullHouse.tscn")
 var main_menu = preload("res://scenes/MainMenu.tscn")
+@onready var happy = $Happy
 
 func _ready():
+	happy.play()
 	$HSplitContainer/CenterContainer/seagull.play("default")
 	modulate.a = 0
 	animation.play("fade_in")
