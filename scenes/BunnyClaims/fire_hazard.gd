@@ -65,6 +65,9 @@ func _on_fire_extinguisher_pressed():
 	await tween.finished
 	background.visible = false
 	background_after.visible = true
+	var tween2 = create_tween()
+	tween2.tween_property(background_after, "modulate:a", 1.0, 0.5)
+	await tween2.finished
 	$smoke1.visible = false
 	$smoke2.visible = false
 	$smoke3.visible = false
