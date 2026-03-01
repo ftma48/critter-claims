@@ -5,6 +5,8 @@ extends Node2D
 @onready var exit_button = $CanvasLayer/Exit
 @onready var chatter_w = $ChatterPlayer
 @onready var chatter_c = $ChatterFlipPlayer
+@onready var bunny_house = preload("res://scenes/BunnyHouseIn.tscn")
+@onready var seagull_house = preload("res://scenes/seagull_house_in.gd")
 
 # [speaker, text, time]
 var conversations = {
@@ -120,4 +122,7 @@ func _end_call():
 
 func _on_exit_pressed() -> void:
 	var tree = get_tree()
-	get_tree().change_scene_to_file("res://scenes/BunnyHouseIn.tscn")
+	if GameState.current_character == GameState.Character.BUNNY:
+		get_tree().change_scene_to_packed(bunny_house)
+	elif GameState.current_character == GameState.Character.SEAGULL:
+		get_tree().change_scene_to_packed(seagull_house)
