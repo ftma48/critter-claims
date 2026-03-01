@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c3sry1mf74dd6"]
+[gd_scene load_steps=34 format=3 uid="uid://c3sry1mf74dd6"]
 
 [ext_resource type="Script" uid="uid://b3xyp0s6h2yd" path="res://scenes/BunnyClaims/infestation.gd" id="1_dqyg5"]
 [ext_resource type="Texture2D" uid="uid://55hpw7t1vtfo" path="res://assets/houses/bunny_burrow_bad.png" id="2_lgoa4"]
@@ -22,46 +22,13 @@
 [ext_resource type="Texture2D" uid="uid://bqkqj4seq82hi" path="res://assets/overlays/bugs/frame_17_delay-0.1s.png" id="20_0mlry"]
 [ext_resource type="Texture2D" uid="uid://cvi20wlmw3ypn" path="res://assets/overlays/bugs/frame_18_delay-0.1s.png" id="21_vj632"]
 [ext_resource type="Texture2D" uid="uid://jjrcvkfyjd58" path="res://assets/overlays/bugs/frame_19_delay-0.1s.png" id="22_phfv7"]
+[ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="23_lgoa4"]
+[ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="24_r8pau"]
+[ext_resource type="Texture2D" uid="uid://dhot0fj45mk6m" path="res://ui/Buttons-house.png" id="25_5u23m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ksx5u"]
 atlas = ExtResource("2_lgoa4")
 region = Rect2(21, 1, 119, 59)
-
-[sub_resource type="Animation" id="Animation_xur2q"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.631373)]
-}
-
-[sub_resource type="Animation" id="Animation_a02gp"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.866667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0.631373), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oo7y6"]
-_data = {
-&"RESET": SubResource("Animation_xur2q"),
-&"fade_in": SubResource("Animation_a02gp")
-}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_svj2v"]
 animations = [{
@@ -131,8 +98,67 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8pau"]
+atlas = ExtResource("23_lgoa4")
+region = Rect2(0, 48, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwn7y"]
+atlas = ExtResource("24_r8pau")
+region = Rect2(128, 200, 48, 16)
+
+[sub_resource type="Animation" id="Animation_ucygd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mipys"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_826wr"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8a8k8"]
+_data = {
+&"RESET": SubResource("Animation_ucygd"),
+&"fade_in": SubResource("Animation_mipys"),
+&"fade_out": SubResource("Animation_826wr")
+}
+
 [node name="Infestation" type="Node2D"]
-modulate = Color(1, 1, 1, 0.631373)
 script = ExtResource("1_dqyg5")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -140,16 +166,11 @@ offset_right = 1152.0
 offset_bottom = 644.0
 texture = SubResource("AtlasTexture_ksx5u")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_oo7y6")
-}
-
 [node name="bug1" type="AnimatedSprite2D" parent="."]
 position = Vector2(297, 576)
 sprite_frames = SubResource("SpriteFrames_svj2v")
 animation = &"run"
-frame_progress = 0.983895
+frame_progress = 0.791919
 
 [node name="bug2" type="AnimatedSprite2D" parent="."]
 position = Vector2(803, 194)
@@ -165,10 +186,75 @@ animation = &"run"
 position = Vector2(301, 318)
 sprite_frames = SubResource("SpriteFrames_svj2v")
 animation = &"run"
-frame_progress = 0.983895
+frame_progress = 0.791919
 
 [node name="bug5" type="AnimatedSprite2D" parent="."]
 position = Vector2(551, 186)
 sprite_frames = SubResource("SpriteFrames_svj2v")
 animation = &"run"
-frame_progress = 0.983895
+frame_progress = 0.791919
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 403.0
+offset_top = 502.0
+offset_right = 950.0
+offset_bottom = 579.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 9.0
+offset_right = 530.0
+offset_bottom = 74.0
+autowrap_mode = 2
+
+[node name="Sprite2D" type="TextureRect" parent="CanvasLayer"]
+offset_left = 933.0
+offset_top = 406.0
+offset_right = 1178.0
+offset_bottom = 656.0
+texture = SubResource("AtlasTexture_r8pau")
+
+[node name="ButtonPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_left = 400.0
+offset_top = 449.0
+offset_right = 669.0
+offset_bottom = 608.0
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/ButtonPanel"]
+offset_left = 35.0
+offset_top = 41.0
+offset_right = 85.0
+offset_bottom = 61.0
+scale = Vector2(3.99587, 4.47776)
+texture_normal = SubResource("AtlasTexture_qwn7y")
+
+[node name="Label2" type="Label" parent="CanvasLayer/ButtonPanel/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.25853
+offset_top = 2.67991
+offset_right = 58.2585
+offset_bottom = 13.6799
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.423389, 0.380931)
+text = "File  claim"
+autowrap_mode = 2
+
+[node name="Exit" type="TextureButton" parent="CanvasLayer"]
+offset_right = 82.0
+offset_bottom = 87.0
+texture_normal = ExtResource("25_5u23m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8a8k8")
+}
+
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

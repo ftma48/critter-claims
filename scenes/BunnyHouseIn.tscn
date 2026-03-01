@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://tfpg0kwqm54c"]
+[gd_scene load_steps=22 format=3 uid="uid://cmf3376sy8ayo"]
 
 [ext_resource type="Script" uid="uid://bkn3jqwse7ndm" path="res://scenes/bunny_house_in.gd" id="1_hbs4e"]
 [ext_resource type="Texture2D" uid="uid://txwbemio6gc4" path="res://assets/houses/bunny_burrow_in_pixel.png" id="2_710rn"]

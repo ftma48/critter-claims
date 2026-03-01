@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	modulate.a = 0
 	$AnimationPlayer.play("fade_in")
 
 
