@@ -147,7 +147,6 @@ stretch_mode = 0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-visible = false
 offset_left = 403.0
 offset_top = 502.0
 offset_right = 950.0

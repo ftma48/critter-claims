@@ -21,6 +21,19 @@ var conversations = {
 		["C", "No, that's everything. Thank you so much!", "09:18"],
 		["W", "You're welcome. Take care. Goodbye!", "09:18"],
 	],
+	"sink": [
+		["W", "Hastings Direct claims, how can I help you today?", "11:22"],
+		["C", "Hi, I have a bit of a situation. My sink pipe was leaking, so I tried to fix it myself... and I think I made it a lot worse.", "11:22"],
+		["W", "I see. Can I take your policy number?", "11:23"],
+		["C", "Yes, it's 5EA9ULL-002.", "11:24"],
+		["W", "Thank you. I'm not 100% sure whether this is covered without checking further.", "11:24"],
+		["C", "Oh... so it might not be?", "11:25"],
+		["W", "I'd need to pass this to my manager. Can I take your number and email contact you later?", "11:25"],
+		["C", "Of course. It's 07777 777 777 and S_Squawk@coastmail.com.", "11:26"],
+		["W", "Perfect. Someone will be in touch later today.", "11:26"],
+		["C", "That's okay, thank you for your help.", "11:27"],
+		["W", "Of course. Take care. Goodbye!", "11:27"],
+	],
 	"fire": [
 		["W", "Hastings Direct claims, how can I help you today?", "14:02"],
 		["C", "There's been a fire in my burrow. The walls, the furniture, everything is damaged!", "14:02"],
@@ -51,6 +64,8 @@ func _ready():
 			claim = "burglary"
 		elif "fire" in title:
 			claim = "fire"
+		elif "water" in title:
+			claim = "sink"
 
 	if claim == "" or not conversations.has(claim):
 		claim = "burglary"

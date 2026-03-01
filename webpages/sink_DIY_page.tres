@@ -4,22 +4,24 @@
 
 [resource]
 script = ExtResource("1_ogs1k")
-title = "Claim: Theft"
+title = "Claim: Escape of water or oil"
 content = "✅ What's covered:
-Loss or damage caused by theft or attempted theft.
+Loss or damage:
+• Caused by water leaking from or freezing in:
+	• a fixed water, drainage or heating installation
+	• a washing machine, dishwasher, water bed, fridge or freezer.
+• Caused by oil either leaking from, or freezing in, a fixed oil-fired heating installation.
+
 
 ❌ What isn't covered:
 Loss or damage:
 • That has not been reported to the police
 • While your home is unoccupied or unfurnished
-• While your home is occupied by anyone other than you, your family or any person you
-or your family have allowed into your home, unless there has been forcible and violent
-entry to or exit from, your home
-• While building works are ongoing unless there is forcible and violent entry to, or exit
-from, your home
-• To materials used for building works.
-
-Please notify the police as soon as the theft is discovered and get a crime reference number."
+• Caused by escape of water from guttering, rainwater and downpipes
+• Caused by general lack of maintenance
+• Caused by infill materials settling, swelling or shrinking due to an escape of water
+• Caused by sulphate reacting with any materials your home is built from
+"
 call = true
-dialogue = Array[String](["I got burgled! Someone broke in and stole my TV...", "I need to file a claim. Let me check if I'm covered.", "Theft is on my policy... I think I qualify!", "Let me check the details on the next page."])
+dialogue = Array[String](["A leaky pipe... and my DIY fix made it so much worse.", "I'm not sure if accidental damage is covered on my policy.", "Wait... I do have accidental cover!", "Let me call and find out if this qualifies."])
 metadata/_custom_type_script = "uid://nhtt4y54fg51"
