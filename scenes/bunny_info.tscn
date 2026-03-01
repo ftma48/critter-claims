@@ -152,7 +152,7 @@ size_flags_horizontal = 3
 position = Vector2(147, 340)
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_0c654")
-frame_progress = 0.189347
+frame_progress = 0.492641
 flip_h = true
 
 [node name="CenterContainer2" type="CenterContainer" parent="HSplitContainer"]

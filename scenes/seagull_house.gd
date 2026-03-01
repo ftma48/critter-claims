@@ -27,4 +27,4 @@ func _on_house_texture_pressed() -> void:
 	animation.play("fade_out")
 	await animation.animation_finished
 	
-	# go inside
+	get_tree().change_scene_to_file("res://webpages/seagull_house_in.tscn")

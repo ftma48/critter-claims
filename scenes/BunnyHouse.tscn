@@ -145,7 +145,7 @@ position = Vector2(-88, 510)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_05dft")
 animation = &"hop"
-frame_progress = 0.812432
+frame_progress = 0.632355
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
