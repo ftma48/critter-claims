@@ -4,12 +4,22 @@
 
 [resource]
 script = ExtResource("1_2hoh5")
-title = "My insurance (Hastings Essential):"
-content = " - Storm or flood damage ✅
- - Escape of water ✅
- - Theft or vandalism ✅
- - Fire or smoke ✅
- - Impact ✅
- - Home emergency cover ❌"
+title = "My Policy: Hastings Essential"
+content = "✅ What's included:
+• Storm or flood damage
+• Escape of water or oil
+• Theft 
+• Vandalism or malicious damage
+• Impact damage (e.g. falling trees)
+• Fire, smoke, lightning, earthquake or explosions
+
+❌ Not included:
+• Home emergency cover
+• Accidental damage
+• Legal expenses cover
+
+📋 Policy number: HE-2024-00847
+Renewal date: 14 March 2025"
 call = false
+dialogue = Array[String](["Let me check what my Hastings Essential policy actually covers.", "I need to see if my situation qualifies before I make a claim.", "Here we go — let's see what's included..."])
 metadata/_custom_type_script = "uid://nhtt4y54fg51"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b70wq17dc1145"]
+[gd_scene load_steps=17 format=3 uid="uid://b70wq17dc1145"]
 
 [ext_resource type="Script" uid="uid://nnx8mpkyy2c4" path="res://scenes/BunnyClaims/missing_tv.gd" id="1_b2odt"]
 [ext_resource type="Texture2D" uid="uid://txwbemio6gc4" path="res://assets/houses/bunny_burrow_in_pixel.png" id="1_y010j"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="5_moa6j"]
 [ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="6_yxywg"]
 [ext_resource type="Texture2D" uid="uid://dhot0fj45mk6m" path="res://ui/Buttons-house.png" id="7_hufb5"]
+[ext_resource type="AudioStream" uid="uid://ta3kajjcxv6c" path="res://assets/audio/chatter.mp3" id="8_ecp4r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yxywg"]
 atlas = ExtResource("1_y010j")
@@ -99,7 +100,7 @@ position = Vector2(322, 245)
 scale = Vector2(4.59877, 4.82787)
 sprite_frames = SubResource("SpriteFrames_hufb5")
 animation = &"Flash"
-frame_progress = 0.474782
+frame_progress = 0.0238154
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -130,7 +131,8 @@ offset_top = 449.0
 offset_right = 669.0
 offset_bottom = 608.0
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/ButtonPanel"]
+[node name="Claim" type="TextureButton" parent="CanvasLayer/ButtonPanel"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 41.0
 offset_right = 85.0
@@ -138,7 +140,7 @@ offset_bottom = 61.0
 scale = Vector2(3.99587, 4.47776)
 texture_normal = SubResource("AtlasTexture_ecp4r")
 
-[node name="Label2" type="Label" parent="CanvasLayer/ButtonPanel/TextureButton"]
+[node name="Label2" type="Label" parent="CanvasLayer/ButtonPanel/Claim"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -163,4 +165,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_8a8k8")
 }
 
+[node name="ChatterPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ecp4r")
+
+[connection signal="pressed" from="CanvasLayer/ButtonPanel/Claim" to="." method="_on_claim_pressed"]
 [connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

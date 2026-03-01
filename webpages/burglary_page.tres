@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="WebPageData" load_steps=2 format=3 uid="uid://bxmwn8wgo5glj"]
+
+[ext_resource type="Script" uid="uid://nhtt4y54fg51" path="res://scripts/WebPageData.gd" id="1_5s3sm"]
+
+[resource]
+script = ExtResource("1_5s3sm")
+title = "Claim: Theft"
+content = "✅ What's covered:
+Loss or damage caused by theft or attempted theft.
+
+❌ What isn't covered:
+Loss or damage:
+• That has not been reported to the police
+• While your home is unoccupied or unfurnished
+• While your home is occupied by anyone other than you, your family or any person you
+or your family have allowed into your home, unless there has been forcible and violent
+entry to or exit from, your home
+• While building works are ongoing unless there is forcible and violent entry to, or exit
+from, your home
+• To materials used for building works.
+
+Please notify the police as soon as the theft is discovered and get a crime reference number."
+call = true
+dialogue = Array[String](["I got burgled! Someone broke in and stole my TV...", "I need to file a claim. Let me check if I'm covered.", "Theft is on my policy... I think I qualify!", "Let me check the details on the next page."])
+metadata/_custom_type_script = "uid://nhtt4y54fg51"

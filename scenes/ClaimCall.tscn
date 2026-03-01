@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://ctjn6kquce41u"]
+
+[ext_resource type="Script" uid="uid://buk4wpx3tu13k" path="res://scenes/claim_call.gd" id="1_b2ytv"]
+[ext_resource type="Texture2D" uid="uid://txwbemio6gc4" path="res://assets/houses/bunny_burrow_in_pixel.png" id="1_ilhid"]
+[ext_resource type="Texture2D" uid="uid://dhot0fj45mk6m" path="res://ui/Buttons-house.png" id="2_b2ytv"]
+[ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="3_j2xu8"]
+[ext_resource type="Texture2D" uid="uid://cla8lpbg41k8n" path="res://assets/animals/seagull.png" id="4_2uqbq"]
+[ext_resource type="AudioStream" uid="uid://ta3kajjcxv6c" path="res://assets/audio/chatter.mp3" id="6_j2xu8"]
+[ext_resource type="AudioStream" uid="uid://dqpb6b7ebxy5n" path="res://assets/audio/chatterFlip.mp3" id="7_2uqbq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g58vn"]
+atlas = ExtResource("1_ilhid")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fb0l"]
+atlas = ExtResource("3_j2xu8")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqdd5"]
+atlas = ExtResource("4_2uqbq")
+region = Rect2(128, 384, 16, 16)
+
+[node name="ClaimCall" type="Node2D"]
+script = ExtResource("1_b2ytv")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1159.0
+offset_bottom = 643.0
+texture = SubResource("AtlasTexture_g58vn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialoguePanelW" type="Panel" parent="CanvasLayer"]
+offset_left = 92.0
+offset_top = 46.0
+offset_right = 506.0
+offset_bottom = 581.0
+
+[node name="DialogueLabelW" type="Label" parent="CanvasLayer/DialoguePanelW"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 32.0
+offset_right = 370.0
+offset_bottom = 490.0
+autowrap_mode = 2
+
+[node name="DialoguePanelC2" type="Panel" parent="CanvasLayer"]
+offset_left = 649.0
+offset_top = 40.0
+offset_right = 1063.0
+offset_bottom = 575.0
+
+[node name="DialogueLabelC" type="Label" parent="CanvasLayer/DialoguePanelC2"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 40.0
+offset_right = 373.0
+offset_bottom = 498.0
+autowrap_mode = 2
+
+[node name="Exit" type="TextureButton" parent="CanvasLayer"]
+offset_right = 82.0
+offset_bottom = 87.0
+texture_normal = ExtResource("2_b2ytv")
+
+[node name="Bunny" type="TextureRect" parent="."]
+offset_left = 1048.0
+offset_top = 499.0
+offset_right = 1169.0
+offset_bottom = 625.0
+texture = SubResource("AtlasTexture_6fb0l")
+
+[node name="Worker" type="TextureRect" parent="."]
+offset_left = -8.0
+offset_top = 515.0
+offset_right = 91.0
+offset_bottom = 638.0
+texture = SubResource("AtlasTexture_mqdd5")
+
+[node name="ChatterPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_j2xu8")
+
+[node name="ChatterFlipPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_2uqbq")
+
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

@@ -7,6 +7,8 @@ extends Node2D
 @onready var bug5 = $bug5
 @onready var label = $CanvasLayer/Panel/Label
 @onready var button_panel = $CanvasLayer/ButtonPanel
+@onready var chatter = $ChatterPlayer
+@onready var bug_sound = $Ants
 
 var lines = [
 	"Eww, bugs everywhere!",
@@ -25,7 +27,9 @@ func _ready():
 	bug3.play("run")
 	bug4.play("run")
 	bug5.play("run")
+	bug_sound.play()
 	label.text = lines[0]
+	chatter.play()
 
 func _input(event):
 	if button_panel.visible:
@@ -34,9 +38,12 @@ func _input(event):
 		current_line += 1
 		if current_line < lines.size():
 			label.text = lines[current_line]
+			chatter.play()
 		else:
 			$CanvasLayer/Panel.visible = false
 			button_panel.visible = true
+			chatter.stop()
+			bug_sound.stop()
 
 
 	
@@ -44,3 +51,8 @@ func _on_exit_pressed() -> void:
 	$AnimationPlayer.play("fade_out")
 	await $AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://scenes/BunnyHouseIn.tscn")
+
+
+func _on_claim_pressed() -> void:
+	GameState.current_webpage = preload("res://webpages/infestation_page.tres")
+	get_tree().change_scene_to_file("res://scenes/computer_screen.tscn")

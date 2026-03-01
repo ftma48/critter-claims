@@ -1,10 +1,13 @@
 extends Node2D
 
 @onready var fire = $Fire
+@onready var fire_sound = $Fire2
 @onready var label = $CanvasLayer/LabelPanel/Label
 @onready var background = $Background
 @onready var background_after = $BackgroundAfter
 @onready var button_panel = $CanvasLayer/ButtonPanel
+@onready var chatter = $ChatterPlayer
+@onready var poof = $Poof
 
 var lines = [
 	"Yikes! There's a fire in the burrow!",
@@ -29,8 +32,10 @@ func _ready():
 	$AnimationPlayer.play("fade_in")
 	await $AnimationPlayer.animation_finished
 	fire.play("burn")
+	fire_sound.play()
 	$CanvasLayer/LabelPanel.visible = true
 	label.text = lines[0]
+	chatter.play()
 
 func _input(event):
 	if button_panel.visible:
@@ -40,12 +45,15 @@ func _input(event):
 		if showing_after_lines:
 			if current_line < after_lines.size():
 				label.text = after_lines[current_line]
+				chatter.play()
 			else:
 				$CanvasLayer/LabelPanel.visible = false
 				button_panel.visible = true
+				chatter.stop()
 		else:
 			if current_line < lines.size():
 				label.text = lines[current_line]
+				chatter.play()
 			else:
 				$CanvasLayer/LabelPanel.visible = false
 
@@ -53,9 +61,11 @@ func _on_fire_extinguisher_pressed():
 	$FireExtinguisher.visible = false
 	$FireExtinguisher.disabled = true
 	$Fire.visible = false
+	fire_sound.stop()
 	$smoke1.visible = true
 	$smoke2.visible = true
 	$smoke3.visible = true
+	poof.play()
 	$smoke1.play("spray")
 	$smoke2.play("spray")
 	$smoke3.play("spray")
@@ -75,9 +85,15 @@ func _on_fire_extinguisher_pressed():
 	current_line = 0
 	$CanvasLayer/LabelPanel.visible = true
 	label.text = after_lines[0]
+	chatter.play()
 
 
 func _on_exit_pressed() -> void:
 	$AnimationPlayer.play("fade_out")
 	await $AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://scenes/BunnyHouseIn.tscn")
+
+
+func _on_claim_pressed() -> void:
+	GameState.current_webpage = preload("res://webpages/fire_hazard_page.tres")
+	get_tree().change_scene_to_file("res://scenes/computer_screen.tscn")

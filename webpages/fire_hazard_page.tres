@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="WebPageData" load_steps=2 format=3 uid="uid://basoptjruefs4"]
+
+[ext_resource type="Script" uid="uid://nhtt4y54fg51" path="res://scripts/WebPageData.gd" id="1_dgclh"]
+
+[resource]
+script = ExtResource("1_dgclh")
+title = "Claim: Fire, smoke, lightning, earthquake or explosion"
+content = "✅ What's covered:
+Loss or damage caused by fire, smoke, lightning, earthquake or explosion.
+
+❌ What isn’t covered:
+Loss or damage:
+• Caused by tobacco burns, scorching, melting, warping, singeing or other forms of heat
+distortion unless accompanied by flames
+• Caused by smog, smoke or gases from agricultural or industrial emissions
+"
+call = true
+dialogue = Array[String](["There was a fire in my burrow. Everything is burnt...", "I have insurance, hopefully fire damage is covered.", "Fire and smoke damage — yes, that's in my policy!", "Let me read the full details before I proceed."])
+metadata/_custom_type_script = "uid://nhtt4y54fg51"

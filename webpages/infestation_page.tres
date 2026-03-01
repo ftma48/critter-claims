@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="WebPageData" load_steps=2 format=3 uid="uid://13v311eal0ow"]
+
+[ext_resource type="Script" uid="uid://nhtt4y54fg51" path="res://scripts/WebPageData.gd" id="1_6cfls"]
+
+[resource]
+script = ExtResource("1_6cfls")
+title = "Claim:  Accidental damage (optional cover)"
+content = "✅ What's covered:
+Accidental damage or loss to buildings, such as repairing a ceiling if someone is in the loft
+and drops something through a floorboard.
+
+❌ General buildings exclusions:
+You are not covered for:
+• Loss or damage caused by wear and tear or any other gradual causes including costs
+that arise from the normal use, maintenance and upkeep of your buildings
+• Loss or damage caused by, or during, cleaning, dyeing, washing, maintenance, repair,
+dismantling, restoring or altering
+• Loss or damage caused by insects or vermin
+• Loss or damage caused by chewing, scratching, tearing or fouling by domestic pets
+• Loss or damage arising from your home not being kept in a good state of repair
+• Any liability arising from any trade, business, profession or employment.
+"
+call = false
+dialogue = Array[String](["My burrow is completely infested with bugs!", "This is going to cost a fortune to fix...", "Let me check if pest damage is covered by my insurance.", "Oh no! it is not covered...", "Oh well... I didn't even buy Accidental damage cover :("])
+metadata/_custom_type_script = "uid://nhtt4y54fg51"

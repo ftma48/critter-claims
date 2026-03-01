@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c3sry1mf74dd6"]
+[gd_scene load_steps=36 format=3 uid="uid://c3sry1mf74dd6"]
 
 [ext_resource type="Script" uid="uid://b3xyp0s6h2yd" path="res://scenes/BunnyClaims/infestation.gd" id="1_dqyg5"]
 [ext_resource type="Texture2D" uid="uid://55hpw7t1vtfo" path="res://assets/houses/bunny_burrow_bad.png" id="2_lgoa4"]
@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="23_lgoa4"]
 [ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="24_r8pau"]
 [ext_resource type="Texture2D" uid="uid://dhot0fj45mk6m" path="res://ui/Buttons-house.png" id="25_5u23m"]
+[ext_resource type="AudioStream" uid="uid://ta3kajjcxv6c" path="res://assets/audio/chatter.mp3" id="26_qwn7y"]
+[ext_resource type="AudioStream" uid="uid://motbv44p1tl1" path="res://assets/audio/Ants.mp3" id="27_jwbjp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ksx5u"]
 atlas = ExtResource("2_lgoa4")
@@ -170,7 +172,7 @@ texture = SubResource("AtlasTexture_ksx5u")
 position = Vector2(297, 576)
 sprite_frames = SubResource("SpriteFrames_svj2v")
 animation = &"run"
-frame_progress = 0.791919
+frame_progress = 0.659402
 
 [node name="bug2" type="AnimatedSprite2D" parent="."]
 position = Vector2(803, 194)
@@ -186,13 +188,13 @@ animation = &"run"
 position = Vector2(301, 318)
 sprite_frames = SubResource("SpriteFrames_svj2v")
 animation = &"run"
-frame_progress = 0.791919
+frame_progress = 0.659402
 
 [node name="bug5" type="AnimatedSprite2D" parent="."]
 position = Vector2(551, 186)
 sprite_frames = SubResource("SpriteFrames_svj2v")
 animation = &"run"
-frame_progress = 0.791919
+frame_progress = 0.659402
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -224,7 +226,8 @@ offset_top = 449.0
 offset_right = 669.0
 offset_bottom = 608.0
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/ButtonPanel"]
+[node name="Claim" type="TextureButton" parent="CanvasLayer/ButtonPanel"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 41.0
 offset_right = 85.0
@@ -232,7 +235,7 @@ offset_bottom = 61.0
 scale = Vector2(3.99587, 4.47776)
 texture_normal = SubResource("AtlasTexture_qwn7y")
 
-[node name="Label2" type="Label" parent="CanvasLayer/ButtonPanel/TextureButton"]
+[node name="Label2" type="Label" parent="CanvasLayer/ButtonPanel/Claim"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -257,4 +260,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_8a8k8")
 }
 
+[node name="ChatterPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_qwn7y")
+
+[node name="Ants" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_jwbjp")
+volume_db = -10.0
+
+[connection signal="pressed" from="CanvasLayer/ButtonPanel/Claim" to="." method="_on_claim_pressed"]
 [connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://baps5qjd6t5hv"]
+[gd_scene load_steps=19 format=3 uid="uid://baps5qjd6t5hv"]
 
 [ext_resource type="Texture2D" uid="uid://qalwg43enc61" path="res://assets/furniture/TopDownHouse_FurnitureState1.png" id="1_gkxp2"]
 [ext_resource type="Texture2D" uid="uid://bikwdnihq3pto" path="res://assets/furniture/TopDownHouse_FloorsAndWalls.png" id="1_hd5qy"]
-[ext_resource type="Script" path="res://scenes/computer_screen.gd" id="1_rwtdv"]
+[ext_resource type="Script" uid="uid://dn5oabojm8uy4" path="res://scenes/computer_screen.gd" id="1_rwtdv"]
 [ext_resource type="Texture2D" uid="uid://ds3aulqaa661w" path="res://assets/furniture/pixil-frame-0.png" id="1_ucd4v"]
 [ext_resource type="Texture2D" uid="uid://uni5jmywfgo" path="res://ui/phone-call.png" id="5_jxtm8"]
+[ext_resource type="Texture2D" uid="uid://c7p2f8cp22osg" path="res://ui/PhoneCallHighlight.png" id="6_63s4g"]
+[ext_resource type="Texture2D" uid="uid://dhot0fj45mk6m" path="res://ui/Buttons-house.png" id="6_jxtm8"]
+[ext_resource type="AudioStream" uid="uid://ta3kajjcxv6c" path="res://assets/audio/chatter.mp3" id="8_8spq2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sdo7l"]
 atlas = ExtResource("1_hd5qy")
@@ -20,6 +23,64 @@ region = Rect2(136, 127, 751, 758)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_63s4g"]
 atlas = ExtResource("5_jxtm8")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8spq2"]
+atlas = ExtResource("5_jxtm8")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2new7"]
+atlas = ExtResource("6_63s4g")
+
+[sub_resource type="Animation" id="Animation_ucygd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mipys"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_826wr"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8a8k8"]
+_data = {
+&"RESET": SubResource("Animation_ucygd"),
+&"fade_in": SubResource("Animation_mipys"),
+&"fade_out": SubResource("Animation_826wr")
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -103,28 +164,65 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 22
 text = "Hastings Direct"
 
 [node name="TitleLabel" type="Label" parent="webpage"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 18
 
-[node name="ContentLabel" type="Label" parent="webpage"]
+[node name="ScrollContainer" type="ScrollContainer" parent="webpage"]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContentLabel" type="Label" parent="webpage/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
 
 [node name="CallButton" type="TextureButton" parent="."]
-visible = false
 layout_mode = 2
 offset_left = 848.0
 offset_top = 320.0
 offset_right = 912.0
 offset_bottom = 380.0
 texture_normal = SubResource("AtlasTexture_63s4g")
-texture_pressed = SubResource("AtlasTexture_63s4g")
-texture_hover = SubResource("AtlasTexture_63s4g")
+texture_pressed = SubResource("AtlasTexture_8spq2")
+texture_hover = SubResource("AtlasTexture_2new7")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialoguePanel" type="Panel" parent="CanvasLayer"]
+offset_left = 63.0
+offset_top = 494.0
+offset_right = 1113.0
+offset_bottom = 613.0
+
+[node name="DialogueLabel" type="Label" parent="CanvasLayer/DialoguePanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 14.0
+offset_right = 1037.0
+offset_bottom = 108.0
+autowrap_mode = 2
+
+[node name="Exit" type="TextureButton" parent="CanvasLayer"]
+offset_right = 82.0
+offset_bottom = 87.0
+texture_normal = ExtResource("6_jxtm8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8a8k8")
+}
+
+[node name="ChatterPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_8spq2")
+
+[connection signal="pressed" from="CallButton" to="." method="_on_call_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]
