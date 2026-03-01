@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dcfv14mp0whrl"]
 
 [ext_resource type="Texture2D" uid="uid://txwbemio6gc4" path="res://assets/houses/bunny_burrow_in_pixel.png" id="1_vatd2"]
-[ext_resource type="Script" uid="uid://bpwak7yveybuc" path="res://scenes/BunnyClaims/broken_window.gd" id="1_vg84r"]
+[ext_resource type="Script" path="res://scenes/BunnyClaims/broken_window.gd" id="1_vg84r"]
 [ext_resource type="Texture2D" uid="uid://cy2mbaabv2ck" path="res://assets/furniture/broken window.png" id="2_hgre6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hgre6"]

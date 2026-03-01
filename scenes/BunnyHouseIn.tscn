@@ -1,6 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://cmf3376sy8ayo"]
+[gd_scene load_steps=22 format=3 uid="uid://tfpg0kwqm54c"]
 
-[ext_resource type="Script" path="res://scenes/bunny_house_in.gd" id="1_hbs4e"]
+[ext_resource type="Script" uid="uid://bkn3jqwse7ndm" path="res://scenes/bunny_house_in.gd" id="1_hbs4e"]
 [ext_resource type="Texture2D" uid="uid://txwbemio6gc4" path="res://assets/houses/bunny_burrow_in_pixel.png" id="2_710rn"]
 [ext_resource type="Texture2D" uid="uid://dr32tbdsrj0h3" path="res://assets/furniture/TopDownHouse_DoorsAndWindows.png" id="2_g8oeg"]
 [ext_resource type="Texture2D" uid="uid://qalwg43enc61" path="res://assets/furniture/TopDownHouse_FurnitureState1.png" id="3_n1r6o"]
@@ -45,7 +45,7 @@ region = Rect2(1, 31, 49, 32)
 atlas = ExtResource("3_n1r6o")
 region = Rect2(96, 112, 16, 48)
 
-[sub_resource type="Animation" id="Animation_8x2ir"]
+[sub_resource type="Animation" id="Animation_ucygd"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -60,7 +60,22 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_eqolu"]
+[sub_resource type="Animation" id="Animation_mipys"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_826wr"]
 resource_name = "fade_out"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -69,16 +84,17 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.9),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0.631373), Color(0, 0, 0, 0.619608)]
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qdsmg"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8a8k8"]
 _data = {
-&"RESET": SubResource("Animation_8x2ir"),
-&"fade_out": SubResource("Animation_eqolu")
+&"RESET": SubResource("Animation_ucygd"),
+&"fade_in": SubResource("Animation_mipys"),
+&"fade_out": SubResource("Animation_826wr")
 }
 
 [node name="BunnyHouseIn" type="Node2D"]
@@ -134,7 +150,7 @@ texture = SubResource("AtlasTexture_eqolu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_qdsmg")
+&"": SubResource("AnimationLibrary_8a8k8")
 }
 
 [connection signal="pressed" from="Window" to="." method="_on_window_pressed"]
