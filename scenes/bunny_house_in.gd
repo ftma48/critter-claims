@@ -1,7 +1,8 @@
 extends Node2D
 
 func _ready():
-	pass
+	modulate.a = 0
+	$AnimationPlayer.play("fade_in")
 
 
 func _on_pan_pressed() -> void:

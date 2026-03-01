@@ -1,14 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcfv14mp0whrl"]
+[gd_scene load_steps=14 format=3 uid="uid://dcfv14mp0whrl"]
 
 [ext_resource type="Texture2D" uid="uid://txwbemio6gc4" path="res://assets/houses/bunny_burrow_in_pixel.png" id="1_vatd2"]
 [ext_resource type="Script" uid="uid://bpwak7yveybuc" path="res://scenes/BunnyClaims/broken_window.gd" id="1_vg84r"]
 [ext_resource type="Texture2D" uid="uid://cy2mbaabv2ck" path="res://assets/furniture/broken window.png" id="2_hgre6"]
+[ext_resource type="Texture2D" uid="uid://bbv5g7ygw5ki0" path="res://assets/animals/bunny.png" id="4_hnbc0"]
+[ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="5_wubk2"]
+[ext_resource type="Texture2D" uid="uid://dhot0fj45mk6m" path="res://ui/Buttons-house.png" id="6_n87ck"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hgre6"]
 atlas = ExtResource("1_vatd2")
 region = Rect2(0, 1, 117, 66)
 
-[sub_resource type="Animation" id="Animation_xur2q"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wubk2"]
+atlas = ExtResource("4_hnbc0")
+region = Rect2(0, 48, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n87ck"]
+atlas = ExtResource("5_wubk2")
+region = Rect2(128, 200, 48, 16)
+
+[sub_resource type="Animation" id="Animation_ucygd"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -20,10 +31,10 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0.631373)]
+"values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_a02gp"]
+[sub_resource type="Animation" id="Animation_mipys"]
 resource_name = "fade_in"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -32,20 +43,35 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.866667),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0.631373), Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oo7y6"]
+[sub_resource type="Animation" id="Animation_826wr"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8a8k8"]
 _data = {
-&"RESET": SubResource("Animation_xur2q"),
-&"fade_in": SubResource("Animation_a02gp")
+&"RESET": SubResource("Animation_ucygd"),
+&"fade_in": SubResource("Animation_mipys"),
+&"fade_out": SubResource("Animation_826wr")
 }
 
 [node name="BrokenWindow" type="Node2D"]
-modulate = Color(1, 1, 1, 0.631373)
 script = ExtResource("1_vg84r")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -58,7 +84,67 @@ position = Vector2(154.188, 359.438)
 scale = Vector2(9.89015, 9.63347)
 texture = ExtResource("2_hgre6")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 403.0
+offset_top = 502.0
+offset_right = 950.0
+offset_bottom = 579.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 9.0
+offset_right = 530.0
+offset_bottom = 74.0
+autowrap_mode = 2
+
+[node name="Sprite2D" type="TextureRect" parent="CanvasLayer"]
+offset_left = 933.0
+offset_top = 406.0
+offset_right = 1178.0
+offset_bottom = 656.0
+texture = SubResource("AtlasTexture_wubk2")
+
+[node name="ButtonPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_left = 400.0
+offset_top = 449.0
+offset_right = 669.0
+offset_bottom = 608.0
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/ButtonPanel"]
+offset_left = 35.0
+offset_top = 41.0
+offset_right = 85.0
+offset_bottom = 61.0
+scale = Vector2(3.99587, 4.47776)
+texture_normal = SubResource("AtlasTexture_n87ck")
+
+[node name="Label2" type="Label" parent="CanvasLayer/ButtonPanel/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.25853
+offset_top = 2.67991
+offset_right = 58.2585
+offset_bottom = 13.6799
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.423389, 0.380931)
+text = "File  claim"
+autowrap_mode = 2
+
+[node name="Exit" type="TextureButton" parent="CanvasLayer"]
+offset_right = 82.0
+offset_bottom = 87.0
+texture_normal = ExtResource("6_n87ck")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_oo7y6")
+&"": SubResource("AnimationLibrary_8a8k8")
 }
+
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]
