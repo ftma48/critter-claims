@@ -146,6 +146,21 @@ offset_bottom = 61.0
 scale = Vector2(3.99587, 4.47776)
 texture_normal = SubResource("AtlasTexture_5jfxp")
 
+[node name="Label2" type="Label" parent="CanvasLayer/ButtonPanel/Claim"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.25853
+offset_top = 2.67991
+offset_right = 58.2585
+offset_bottom = 13.6799
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.423389, 0.380931)
+text = "File  claim"
+autowrap_mode = 2
+
 [node name="Exit" type="TextureButton" parent="CanvasLayer"]
 offset_right = 82.0
 offset_bottom = 87.0

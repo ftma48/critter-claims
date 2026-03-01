@@ -13,7 +13,7 @@ content = "✅ What's included:
 • Impact damage (e.g. falling trees)
 • Fire, smoke, lightning, earthquake or explosions
 
-❌ Not included:
+ 
 • Home emergency cover
 • Accidental damage
 • Legal expenses cover
@@ -21,5 +21,5 @@ content = "✅ What's included:
 📋 Policy number: 8UNNY-00
 Renewal date: 05 April 2026"
 call = false
-dialogue = Array[String](["Let me check what my Hastings Essential policy actually covers.", "I need to see if my situation qualifies before I make a claim.", "Here we go — let's see what's included..."])
+dialogue = Array[String]([])
 metadata/_custom_type_script = "uid://nhtt4y54fg51"

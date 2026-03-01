@@ -12,7 +12,8 @@ func _ready():
 	lines = [
 		"The window is broken!",
 		"It looks like this branch smashed it in.",
-		"It must have been the storm last night!"
+		"It must have been the storm last night!",
+		"I should report this to my insurance company..."
 	]
 	$AnimationPlayer.play("fade_in")
 	await $AnimationPlayer.animation_finished

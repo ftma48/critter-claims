@@ -13,6 +13,8 @@ func _ready():
 func _on_select_button_pressed() -> void:
 	animation.play("fade_out")
 	await animation.animation_finished
+	GameState.plan_type = GameState.PlanType.PREMIER
+	GameState.current_character = GameState.Character.SEAGULL
 	get_tree().change_scene_to_packed(seagull_house)
 
 func _on_back_button_pressed() -> void:

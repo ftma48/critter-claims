@@ -20,6 +20,8 @@ func _on_select_button_pressed() -> void:
 
 func _on_back_button_pressed() -> void:
 	happy.stop()
+	GameState.plan_type = GameState.PlanType.ESSENTIAL
+	GameState.current_character = GameState.Character.BUNNY
 	animation.play("fade_out")
 	await animation.animation_finished
 	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")

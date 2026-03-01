@@ -198,7 +198,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.282353, 0, 0.513726, 1)
 theme_override_font_sizes/font_size = 44
-text = "Seagull"
+text = "Stephen Seagull"
 
 [node name="Label2" type="Label" parent="HSplitContainer/CenterContainer2/Panel/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -212,7 +212,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.282353, 0, 0.513726, 1)
 theme_override_font_sizes/font_size = 30
-text = "Seagull is ?????????????"
+text = "Stephen is a mailbird who lives
+at 22 Sky Lane."
 
 [node name="Button Container" type="HBoxContainer" parent="HSplitContainer/CenterContainer2/Panel/VBoxContainer"]
 layout_mode = 2

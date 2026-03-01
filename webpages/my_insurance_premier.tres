@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WebPageData" load_steps=2 format=3 uid="uid://detqxtmc6m1jx"]
+
+[ext_resource type="Script" uid="uid://nhtt4y54fg51" path="res://scripts/WebPageData.gd" id="1_xnsf7"]
+
+[resource]
+script = ExtResource("1_xnsf7")
+title = "My Policy: Hastings Premier"
+content = ""
+call = false
+dialogue = Array[String]([])
+metadata/_custom_type_script = "uid://nhtt4y54fg51"
