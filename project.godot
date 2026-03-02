@@ -13,7 +13,6 @@ config_version=5
 config/name="critter claims"
 run/main_scene="uid://bxk5t2v0l4v32"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 

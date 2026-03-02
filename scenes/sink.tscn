@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://dl8n8jsxrckgf"]
 
 [ext_resource type="Texture2D" uid="uid://o8pkjrsibtdn" path="res://assets/houses/SeagullHouseInside.png" id="1_0f0hj"]
-[ext_resource type="Script" uid="uid://bmu84h60u25g0" path="res://sink.gd" id="1_2i27s"]
+[ext_resource type="Script" uid="uid://bmu84h60u25g0" path="res://scenes/sink.gd" id="1_2i27s"]
 [ext_resource type="Texture2D" uid="uid://00e4h451fssu" path="res://assets/overlays/sink leaking.png" id="2_hg6cf"]
 [ext_resource type="Texture2D" uid="uid://dpfpvuvihkyxo" path="res://assets/furniture/Tools.png" id="4_hb3gy"]
 [ext_resource type="Texture2D" uid="uid://cr2ajrll0vygr" path="res://ui/FreeFairyTaleUI.png" id="5_hb3gy"]

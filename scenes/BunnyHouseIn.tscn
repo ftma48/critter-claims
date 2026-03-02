@@ -170,6 +170,7 @@ offset_right = 82.0
 offset_bottom = 87.0
 scale = Vector2(0.583377, 0.54686)
 texture_normal = ExtResource("11_qdsmg")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Window" to="." method="_on_window_pressed"]
 [connection signal="pressed" from="Book shelf" to="." method="_on_book_shelf_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b3wapwmnwfksc"]
+[gd_scene load_steps=18 format=3 uid="uid://b3wapwmnwfksc"]
 
 [ext_resource type="Script" uid="uid://rhcj4ml6q8uk" path="res://scenes/seagull_house_in.gd" id="1_iscd0"]
 [ext_resource type="Texture2D" uid="uid://o8pkjrsibtdn" path="res://assets/houses/SeagullHouseInside.png" id="1_vq85g"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cgkdaat641v2e" path="res://assets/furniture/TopDownHouse_FurnitureState2.png" id="5_lt6xu"]
 [ext_resource type="Texture2D" uid="uid://u80f6y65ite7" path="res://assets/furniture/sink.png" id="6_kfkuh"]
 [ext_resource type="AudioStream" uid="uid://cyuki5fyfyb87" path="res://assets/audio/fly.mp3" id="7_kfkuh"]
+[ext_resource type="Texture2D" uid="uid://dhot0fj45mk6m" path="res://ui/Buttons-house.png" id="8_63u5c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_chc4b"]
 atlas = ExtResource("1_vq85g")
@@ -116,5 +117,15 @@ libraries = {
 [node name="fly" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_kfkuh")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Exit" type="TextureButton" parent="CanvasLayer"]
+offset_right = 82.0
+offset_bottom = 87.0
+scale = Vector2(0.583377, 0.54686)
+texture_normal = ExtResource("8_63u5c")
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Window" to="." method="_on_window_pressed"]
 [connection signal="pressed" from="Sink" to="." method="_on_sink_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]
