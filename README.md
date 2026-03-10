@@ -1,6 +1,8 @@
 # Critter Claims
 Cute homes. Costly mistakes.
 
+Winner — Hastings Direct Track, HackSussex Hackathon 2026
+
 ## Overview
 Critter Claims is a point-and-click educational game created for HackSussex Hackathon 2026, under Hastings Direct’s challenge: “Make insurance claims fun and less stressful.”
 
